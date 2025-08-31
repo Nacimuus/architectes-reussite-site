@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Architectes de la Réussite</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Font Awesome pour icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet.js pour la carte -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <!-- AOS (animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+    <!-- Hero -->
+    <section class="hero" data-aos="fade-up">
+      <div class="hero-content">
+        <h1>Bâtir l’Espoir, Donner du Pouvoir à la Jeunesse, Façonner l’Avenir 🌍</h1>
+        <p>Nous créons des opportunités pour les jeunes à travers le monde grâce à la formation, l’éducation et un accompagnement continu.</p>
+        <a href="initiatives.html" class="btn-primary" data-aos="zoom-in" data-aos-delay="300">Découvrir Nos Initiatives</a>
+      </div>
+    </section>
+
+    <!-- Pourquoi Nous -->
+    <section class="pourquoi-nous" data-aos="fade-up">
+      <h2 data-aos="fade-right">Pourquoi Nous ?</h2>
+      <p data-aos="fade-left" data-aos-delay="200">
+        Nous croyons en une Afrique où chaque jeune peut briller ✨.<br>
+        Nous partageons notre expertise et notre expérience pour <strong>co-construire le futur</strong> avec la jeunesse.<br>
+        Notre mission est faite d’amour, de compassion et d’espoir 🌍.
+      </p>
+      <div class="bubbles">
+        <span data-aos="zoom-in">Espoir</span>
+        <span data-aos="zoom-in" data-aos-delay="100">Compassion</span>
+        <span data-aos="zoom-in" data-aos-delay="200">Partage</span>
+        <span data-aos="zoom-in" data-aos-delay="300">Avenir</span>
+        <span data-aos="zoom-in" data-aos-delay="400">Éducation</span>
+        <span data-aos="zoom-in" data-aos-delay="500">Unité</span>
+      </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="values">
+      <h2 data-aos="fade-up">Nos Valeurs</h2>
+      <div class="values-cards">
+        <div class="card card1" data-aos="flip-left">
+          <i class="fas fa-seedling"></i>
+          <h3>Kaizen</h3>
+          <p>L’amélioration continue dans tout ce que nous entreprenons.</p>
+        </div>
+        <div class="card card2" data-aos="flip-right" data-aos-delay="100">
+          <i class="fas fa-child"></i>
+          <h3>Shoshin</h3>
+          <p>Esprit du débutant : rester ouvert, curieux et enthousiaste.</p>
+        </div>
+        <div class="card card3" data-aos="flip-left" data-aos-delay="200">
+          <i class="fas fa-fire"></i>
+          <h3>Gambaru</h3>
+          <p>Persévérance et résilience face aux défis.</p>
+        </div>
+        <div class="card card4" data-aos="flip-right" data-aos-delay="300">
+          <i class="fas fa-users"></i>
+          <h3>Harambee</h3>
+          <p>Avancer ensemble grâce à la force du collectif.</p>
+        </div>
+        <div class="card card5" data-aos="flip-left" data-aos-delay="400">
+          <i class="fas fa-heart"></i>
+          <h3>Ubuntu</h3>
+          <p>Je suis parce que nous sommes : solidarité et humanité.</p>
+        </div>
+        <div class="card card6" data-aos="flip-right" data-aos-delay="500">
+          <i class="fas fa-history"></i>
+          <h3>Sankofa</h3>
+          <p>S’inspirer du passé pour construire l’avenir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partenaires -->
+    <section class="partners">
+      <h2 data-aos="fade-up">Nos Partenaires</h2>
+      <div class="partners-logos">
+        <img src="assets/images/partner1.png" alt="Partenaire 1" data-aos="zoom-in">
+        <img src="assets/images/partner2.png" alt="Partenaire 2" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/images/partner3.png" alt="Partenaire 3" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/images/partner4.png" alt="Partenaire 4" data-aos="zoom-in" data-aos-delay="300">
+      </div>
+    </section>
+
+    <!-- Carte du Monde -->
+    <section class="world-map" data-aos="fade-up">
+      <h2>Notre Impact à l’Échelle Mondiale</h2>
+      <p>Découvrez où nous formons, soutenons et accompagnons la jeunesse à travers le monde.</p>
+      <div id="map" data-aos="zoom-in"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Init animations
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Init Leaflet map
+    document.addEventListener("DOMContentLoaded", function() {
+      const map = L.map('map').setView([20,0], 2);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributeurs'
+      }).addTo(map);
+
+      // Marqueurs exemples
+      L.marker([48.8566, 2.3522]).addTo(map).bindPopup("Paris - Siège partenaire");
+      L.marker([5.6037, -0.1870]).addTo(map).bindPopup("Accra, Ghana - Académie de formation");
+      L.marker([-1.2921, 36.8219]).addTo(map).bindPopup("Nairobi, Kenya - Programme jeunesse");
+      L.marker([34.0522, -118.2437]).addTo(map).bindPopup("Los Angeles - Organisation partenaire");
+    });
+  </script>
+</body>
+</html>

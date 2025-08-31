@@ -1,0 +1,29 @@
+<header>
+    <nav class="navbar">
+      <!-- Logo vers l'accueil -->
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="Logo Les Architectes de la Réussite">
+      </a>
+  
+      <!-- Menu burger (mobile) -->
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <!-- Overlay pour l'effet flou -->
+      <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+  
+      <!-- Liens de navigation -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="history-team.html">Notre Histoire & Équipe</a></li>
+        <li><a href="initiatives.html">Nos Initiatives</a></li>
+        <li><a href="academy.html">Académie de Formation</a></li>
+        <li><a href="support.html">Soutien Continu</a></li>
+        <li><a href="contact.html" class="cta">Contact / Faire un Don</a></li>
+      </ul>
+    </nav>
+  </header>
+  

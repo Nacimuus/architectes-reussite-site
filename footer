@@ -1,0 +1,63 @@
+<footer>
+    <div class="footer-container">
+      <!-- Infos -->
+      <div class="footer-info">
+        <h3>Les Architectes de la Réussite</h3>
+        <p>123 Avenue de la Réussite<br>75000 Paris, France</p>
+        <p>📞 +33 (0)6 12 34 56 78</p>
+        <p>✉ contact@architectes-reussite.org</p>
+      </div>
+  
+      <!-- Liens -->
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">🏠 Accueil</a></li>
+          <li><a href="initiatives.html">🌍 Nos Initiatives</a></li>
+          <li><a href="history-team.html">👥 Notre Histoire & Équipe</a></li>
+          <li><a href="contact.html">📩 Contact</a></li>
+          <li><a href="#">📄 Mentions légales</a></li>
+        </ul>
+      </div>
+  
+      <!-- Newsletter -->
+      <div class="footer-newsletter">
+        <h4>Restez Inspirés ✨</h4>
+        <p>Inscrivez-vous à notre newsletter mensuelle et suivez notre impact dans le monde.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="newsletter-input">
+            <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+            <button type="submit">S’inscrire</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Bas de page -->
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p>© 2025 Les Architectes de la Réussite — Tous droits réservés</p>
+    </div>
+  
+    <!-- Popup succès newsletter -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+  
+        <!-- Icône succès -->
+        <div class="success-icon">
+          <div class="checkmark"></div>
+        </div>
+  
+        <h3>🎉 Merci !</h3>
+        <p>Vous êtes maintenant inscrit à notre newsletter.<br>
+           À très vite pour nos prochaines actualités !</p>
+      </div>
+    </div>
+  </footer>
+  
