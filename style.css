@@ -1,12 +1,12 @@
-/* === NAVBAR === */
+/* === NAVBAR TRANSPARENTE SUR HERO === */
 header {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  background: transparent;
   z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 .navbar {
@@ -18,52 +18,52 @@ header {
   align-items: center;
 }
 
+/* Logo */
 .logo img {
-  height: 45px;
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
-/* Links */
+/* Nav links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-links li a {
-  position: relative;
   text-decoration: none;
-  color: #222;
+  color: white; /* blanc car sur Hero */
   font-weight: 600;
   transition: color 0.3s;
 }
 
-.nav-links li a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #2ca58d;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
 .nav-links li a:hover {
-  color: #2ca58d;
-}
-
-.nav-links li a:hover::after {
-  width: 100%;
+  color: #ffd60a; /* jaune en hover */
 }
 
 /* CTA */
 .nav-links .cta {
   background: #e63946;
-  color: white !important;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 600;
+  border-radius: 6px;
+  color: #fff !important;
+}
+
+/* Quand on scrolle, on ajoute une classe sticky */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.85); /* fond blanc semi-transparent */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header.scrolled .nav-links li a {
+  color: #222; /* texte foncé quand on scrolle */
+}
+
+header.scrolled .nav-links li a:hover {
+  color: #2ca58d; /* vert quand hover */
 }
 
 /* Hamburger */
@@ -386,7 +386,7 @@ footer {
 }
 /* === Hero === */
 .hero {
-  background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
+  background: url('image/home.png') center/cover no-repeat;
   height: 90vh;
   display: flex;
   align-items: center;
@@ -408,25 +408,111 @@ footer {
 }
 .btn-primary:hover { background: #a4161a; }
 
-/* === Pourquoi Nous === */
-.pourquoi-nous { padding: 4rem 2rem; text-align: center; background: #f9f9f9; }
-.pourquoi-nous h2 { margin-bottom: 1rem; font-size: 2rem; color: #2ca58d; }
-.pourquoi-nous p { font-size: 1.1rem; color: #444; margin-bottom: 2rem; line-height: 1.6; }
-.bubbles { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+/* === Pourquoi Nous (Version Design) === */
+.pourquoi-nous {
+  position: relative;
+  padding: 6rem 2rem;
+  color: white;
+  background: url(image/pourquoi-nous-bg.png)center/cover no-repeat; /* ton image Sora */
+}
+
+.pourquoi-nous::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* overlay sombre pour lisibilité */
+}
+
+.pourquoi-nous .container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  z-index: 1;
+}
+
+.pourquoi-nous h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #ffd60a;
+}
+
+.pourquoi-nous p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Bulles */
+.bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Bulles futuristes */
 .bubbles span {
-  padding: 0.7rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: bold;
-  font-size: 0.95rem;
-  transition: transform 0.3s;
+  font-size: 1rem;
+  color: #fff;
+  border: 2px solid #000; /* contour noir */
+  background: linear-gradient(135deg, #ff9f1c, #ffd60a); /* dégradé par défaut */
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  transition: transform 0.3s, background 0.4s;
 }
-.bubbles span:nth-child(1) { background: #ffd60a; color: #222; }
-.bubbles span:nth-child(2) { background: #e63946; color: #fff; }
-.bubbles span:nth-child(3) { background: #2ca58d; color: #fff; }
-.bubbles span:nth-child(4) { background: #5865f2; color: #fff; }
-.bubbles span:nth-child(5) { background: #ff9f1c; color: #fff; }
-.bubbles span:nth-child(6) { background: #6a4c93; color: #fff; }
-.bubbles span:hover { transform: scale(1.1); }
+
+/* Bulles individuelles avec dégradés différents */
+.bubbles span:nth-child(1) { background: linear-gradient(135deg, #ff4e50, #f9d423); }
+.bubbles span:nth-child(2) { background: linear-gradient(135deg, #43cea2, #185a9d); }
+.bubbles span:nth-child(3) { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+.bubbles span:nth-child(4) { background: linear-gradient(135deg, #36d1dc, #5b86e5); }
+.bubbles span:nth-child(5) { background: linear-gradient(135deg, #c31432, #240b36); }
+.bubbles span:nth-child(6) { background: linear-gradient(135deg, #11998e, #38ef7d); }
+
+/* Effet hover futuriste */
+.bubbles span:hover {
+  transform: scale(1.2) rotate(3deg);
+  background: linear-gradient(135deg, #fff176, #fbc02d); /* éclat doré au hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4), inset 0 3px 8px rgba(255,255,255,0.6);
+}
+/* Animation flottante */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.bubbles span {
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Décalage des bulles pour qu’elles ne bougent pas toutes en même temps */
+.bubbles span:nth-child(1) { animation-delay: 0s; }
+.bubbles span:nth-child(2) { animation-delay: 0.5s; }
+.bubbles span:nth-child(3) { animation-delay: 1s; }
+.bubbles span:nth-child(4) { animation-delay: 1.5s; }
+.bubbles span:nth-child(5) { animation-delay: 2s; }
+.bubbles span:nth-child(6) { animation-delay: 2.5s; }
+
+
+/* Responsive (mobile) */
+@media (max-width: 900px) {
+  .pourquoi-nous .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .text-content {
+    margin-bottom: 2rem;
+  }
+}
 
 /* === Valeurs === */
 .values { padding: 4rem 2rem; text-align: center; }
