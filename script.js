@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("header.html")
       .then(res => res.text())
       .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
+        document.getElementById("header.html").innerHTML = data;
   
         // re-bind header JS after injection
         const burger = document.getElementById("hamburger");
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("footer.html")
       .then(res => res.text())
       .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
+        document.getElementById("footer.html").innerHTML = data;
   
         // Newsletter form logic
         const form = document.querySelector(".footer-newsletter form");
