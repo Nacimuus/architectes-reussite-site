@@ -121,3 +121,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// Flip cards on click
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".skill-card");
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("flip");
+    });
+  });
+});
+// Team carousel with arrows
+new Swiper(".team-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: { delay: 2500, disableOnInteraction: false },
+  pagination: { el: ".team-swiper .swiper-pagination", clickable: true },
+  navigation: {
+    nextEl: ".team-swiper .swiper-button-next",
+    prevEl: ".team-swiper .swiper-button-prev",
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    600: { slidesPerView: 2 },
+    900: { slidesPerView: 3 }
+  }
+});
+
