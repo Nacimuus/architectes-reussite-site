@@ -100,3 +100,24 @@ window.addEventListener("scroll", function() {
     header.classList.remove("scrolled");
   }
 });
+// === Swiper Partenaires ===
+document.addEventListener("DOMContentLoaded", () => {
+  new Swiper(".partners-swiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      600: { slidesPerView: 2 },
+      900: { slidesPerView: 3 }
+    }
+  });
+});

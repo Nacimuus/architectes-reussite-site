@@ -515,24 +515,83 @@ footer {
 }
 
 /* === Valeurs === */
-.values { padding: 4rem 2rem; text-align: center; }
-.values h2 { margin-bottom: 2rem; font-size: 2rem; color: #2ca58d; }
-.values-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-.card {
-  padding: 2rem;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+/* Section Valeurs */
+.values {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: #f9f9f9;
 }
-.card:hover { transform: translateY(-5px); }
-.card i { font-size: 2rem; margin-bottom: 1rem; }
-.card1 { background: #2ca58d; }
-.card2 { background: #5865f2; }
-.card3 { background: #e63946; }
-.card4 { background: #ff9f1c; }
-.card5 { background: #ffd60a; color: #222; }
-.card6 { background: #6a4c93; }
+
+.values h2 {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: #2ca58d;
+}
+
+/* Grille */
+.values-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Cartes */
+.value-card {
+  border-radius: 30px 30px 0 0; /* haut arrondi, bas carré */
+  overflow: hidden;
+  background: #fff; /* fond blanc par défaut */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: flex-end;
+  height: 350px;
+  position: relative;
+  transition: transform 0.4s;
+}
+
+/* Image de fond */
+.value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* semi-transparent */
+  z-index: 1;
+}
+
+/* Fond spécifique par valeur (à générer sur Sora et placer dans /images/) */
+.value-card.kaizen::before { background-image: url(image/Kaizen.png); }
+.value-card.ubuntu::before { background-image: url(image/Ubuntu.png); }
+.value-card.gambaru::before { background-image: url(image/gambaru.png); }
+
+/* Contenu */
+.card-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.85); /* fond blanc translucide */
+  padding: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Effet hover */
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
 
 /* === Partenaires === */
 .partners { padding: 4rem 2rem; text-align: center; }
@@ -553,4 +612,43 @@ footer {
   border-radius: 12px;
   margin-top: 1rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+/* Partenaires */
+.partners {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.partners h2 {
+  margin-bottom: 2rem;
+  color: #2ca58d;
+  font-size: 2rem;
+}
+
+/* Swiper */
+.partners-swiper {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.partners-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partners-swiper img {
+  height: 70px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+}
+
+.partners-swiper img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
 }

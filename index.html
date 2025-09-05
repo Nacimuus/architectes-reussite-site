@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les Architectes de la Réussite</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
   <!-- Font Awesome pour icônes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +15,11 @@
 
   <!-- AOS (animations) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 </head>
+
 <body>
 
   <!-- Header -->
@@ -62,49 +66,56 @@
     <section class="values">
       <h2 data-aos="fade-up">Nos Valeurs</h2>
       <div class="values-cards">
-        <div class="card card1" data-aos="flip-left">
-          <i class="fas fa-seedling"></i>
-          <h3>Kaizen</h3>
-          <p>L’amélioration continue dans tout ce que nous entreprenons.</p>
+        
+        <!-- Kaizen -->
+        <div class="value-card kaizen" data-aos="fade-up" data-aos-delay="0">
+          <div class="card-content">
+            <h3>Kaizen</h3>
+            <p>L’amélioration continue dans tout ce que nous entreprenons.</p>
+          </div>
         </div>
-        <div class="card card2" data-aos="flip-right" data-aos-delay="100">
-          <i class="fas fa-child"></i>
-          <h3>Shoshin</h3>
-          <p>Esprit du débutant : rester ouvert, curieux et enthousiaste.</p>
+    
+        <!-- Ubuntu -->
+        <div class="value-card ubuntu" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-content">
+            <h3>Ubuntu</h3>
+            <p>Je suis parce que nous sommes : solidarité et humanité.</p>
+          </div>
         </div>
-        <div class="card card3" data-aos="flip-left" data-aos-delay="200">
-          <i class="fas fa-fire"></i>
-          <h3>Gambaru</h3>
-          <p>Persévérance et résilience face aux défis.</p>
+    
+        <!-- Gambaru -->
+        <div class="value-card gambaru" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-content">
+            <h3>Gambaru</h3>
+            <p>Persévérance et résilience face aux défis.</p>
+          </div>
         </div>
-        <div class="card card4" data-aos="flip-right" data-aos-delay="300">
-          <i class="fas fa-users"></i>
-          <h3>Harambee</h3>
-          <p>Avancer ensemble grâce à la force du collectif.</p>
-        </div>
-        <div class="card card5" data-aos="flip-left" data-aos-delay="400">
-          <i class="fas fa-heart"></i>
-          <h3>Ubuntu</h3>
-          <p>Je suis parce que nous sommes : solidarité et humanité.</p>
-        </div>
-        <div class="card card6" data-aos="flip-right" data-aos-delay="500">
-          <i class="fas fa-history"></i>
-          <h3>Sankofa</h3>
-          <p>S’inspirer du passé pour construire l’avenir.</p>
-        </div>
+    
       </div>
     </section>
+    
 
     <!-- Partenaires -->
     <section class="partners">
       <h2 data-aos="fade-up">Nos Partenaires</h2>
-      <div class="partners-logos">
-        <img src="assets/images/partner1.png" alt="Partenaire 1" data-aos="zoom-in">
-        <img src="assets/images/partner2.png" alt="Partenaire 2" data-aos="zoom-in" data-aos-delay="100">
-        <img src="assets/images/partner3.png" alt="Partenaire 3" data-aos="zoom-in" data-aos-delay="200">
-        <img src="assets/images/partner4.png" alt="Partenaire 4" data-aos="zoom-in" data-aos-delay="300">
+    
+      <!-- Swiper Container -->
+      <div class="swiper partners-swiper" data-aos="zoom-in">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="images/partner1.png" alt="Partenaire 1"></div>
+          <div class="swiper-slide"><img src="images/partner2.png" alt="Partenaire 2"></div>
+          <div class="swiper-slide"><img src="images/partner3.png" alt="Partenaire 3"></div>
+          <div class="swiper-slide"><img src="images/partner4.png" alt="Partenaire 4"></div>
+          <div class="swiper-slide"><img src="images/partner5.png" alt="Partenaire 5"></div>
+          <div class="swiper-slide"><img src="images/partner6.png" alt="Partenaire 6"></div>
+        </div>
+    
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
       </div>
     </section>
+    
 
     <!-- Carte du Monde -->
     <section class="world-map" data-aos="fade-up">
@@ -118,7 +129,6 @@
   <div id="footer"></div>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -142,5 +152,8 @@
       L.marker([34.0522, -118.2437]).addTo(map).bindPopup("Los Angeles - Organisation partenaire");
     });
   </script>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 </html>
