@@ -148,3 +148,28 @@ new Swiper(".team-swiper", {
   }
 });
 
+// === Filtrage du portfolio avec animation fade ===
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Active button style
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      projects.forEach(project => {
+        const categories = project.getAttribute("data-category");
+
+        if (filter === "all" || categories.includes(filter)) {
+          project.classList.remove("hide");
+        } else {
+          project.classList.add("hide");
+        }
+      });
+    });
+  });
+});

@@ -888,3 +888,138 @@ footer {
   padding: 3rem 2rem;
 }
 .cta-section h2 { margin-bottom: 1.5rem; }
+/* Hero Initiatives */
+.hero-initiatives {
+  background: url('images/initiatives-hero.jpg') center/cover no-repeat;
+  height: 50vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.hero-initiatives .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.hero-initiatives .hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Portfolio Grid */
+.portfolio {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+.portfolio h2 {
+  margin-bottom: 3rem;
+  color: #2ca58d;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+  color: #2ca58d;
+}
+
+.project-info .location, .project-info .date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.project-info .desc {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: #2ca58d;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.btn-secondary:hover {
+  background: #e63946;
+}
+/* Filtres Portfolio */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  background: #2ca58d;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.filter-btn:hover {
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  background: #ffd60a;
+  color: #222;
+}
+/* Effet fade pour les projets */
+.project-card {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
