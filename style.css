@@ -399,8 +399,10 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-  padding: 0 2rem;
+  background:
+    linear-gradient(0deg, rgba(255,255,255,0.4), rgba(255,255,255,0.4)), /* subtle overlay for clarity */
+    ;
+  color: #222; /* <-- default text color */
 }
 hero::before {
   content: "";
@@ -418,6 +420,19 @@ hero::before {
 .hero .hero-text {
   position: relative;
   z-index: 2;
+  color: #222;
+}
+.hero .hero-text h1 {
+  font-size: 2.8rem;
+  color: #222;
+}
+
+.hero .hero-text p {
+  color: #333;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto 2rem;
+  line-height: 1.6;
 }
 .hero-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
@@ -1076,14 +1091,14 @@ hero::before {
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  /* optional soft dark overlay */
     url(image/background\ valeur\ index.png) center/cover no-repeat;
   background-attachment: fixed; /* gives elegant parallax feel */
-  color: white; /* makes text visible on darker backgrounds */
+  color: #222; /* makes text visible on darker backgrounds */
 }
 
 /* Make sure inner content stays readable */
 .values-bg h2, 
 .values-bg p, 
 .values-bg h3 {
-  color: #fff;
+  color: #222;
   position: relative;
   z-index: 2;
 }
