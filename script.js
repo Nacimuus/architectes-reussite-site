@@ -105,6 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
         el: ".swiper-pagination",
         clickable: true,
       },
+      navigation: {
+        nextEl: ".partners-swiper .swiper-button-next",
+        prevEl: ".partners-swiper .swiper-button-prev",
+      },
       breakpoints: {
         0: { slidesPerView: 1 },
         600: { slidesPerView: 2 },
@@ -118,7 +122,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".skill-card");
   cards.forEach(card => {
     card.addEventListener("click", () => {
+      card.classList.add("no-hover");
       card.classList.toggle("flip");
+
+      const removeNoHover = () => {
+        card.classList.remove("no-hover");
+      };
+
+      card.addEventListener("mouseleave", removeNoHover, { once: true });
     });
   });
 });
@@ -207,3 +218,49 @@ new Swiper(".team-swiper", {
     });
   });
 
+// ==== Actions en cours (index only) ====
+document.addEventListener("DOMContentLoaded", async () => {
+  const section = document.getElementById("actions-en-cours");
+  const grid = document.getElementById("actionsGrid");
+  if (!section || !grid) return;
+
+  try {
+    const res = await fetch("actions.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("actions.json not found");
+    const items = await res.json();
+
+    const today = new Date();
+    const active = (items || []).filter(it => {
+      const statutOk = (it.statut || "").toLowerCase() === "en_cours";
+      const fin = it.date_fin ? new Date(it.date_fin) : null;
+      const dateOk = fin ? fin >= new Date(today.toDateString()) : false; // keep ongoing if end date in future
+      return statutOk || dateOk;
+    });
+
+    if (!active.length) return; // keep section hidden
+
+    // Build cards
+    const cardHTML = active.map((it, idx) => `
+      <article class="action-card" data-aos="zoom-in" ${idx ? `data-aos-delay="${idx*100}"` : ""}>
+        <div class="thumb">
+          <img src="${it.image || 'images/placeholder.jpg'}" alt="${it.titre || 'Action'}">
+        </div>
+        <div class="info">
+          <h3>${it.titre || ''}</h3>
+          <p class="meta">
+            <span><i class="fas fa-map-marker-alt"></i> ${it.lieu || ''}</span>
+            ${it.date_debut || it.date_fin ? `<span><i class="fas fa-calendar"></i> ${it.date_debut || ''}${it.date_fin ? ` → ${it.date_fin}` : ''}</span>` : ``}
+          </p>
+          <p class="desc">${it.description_courte || ''}</p>
+          ${it.lien ? `<a class="btn-secondary" href="${it.lien}">En savoir plus</a>` : ``}
+        </div>
+      </article>
+    `).join("");
+
+    grid.innerHTML = cardHTML;
+    section.classList.remove("hidden"); // reveal
+  } catch (e) {
+    // Silent fail: if actions.json missing or invalid, keep the section hidden
+    // console.warn("No actions loaded", e);
+  }
+});
