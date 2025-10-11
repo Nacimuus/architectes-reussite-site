@@ -709,6 +709,21 @@ hero::before {
 }
 .story-text h2 { color: #2ca58d; margin-bottom: 1rem; }
 .story-image img { width: 100%; border-radius: 12px; }
+@media (max-width: 768px) {
+  .notre-histoire .container {
+    grid-template-columns: 1fr;
+  }
+
+  .notre-histoire .story-text {
+    text-align: center;
+  }
+
+  .notre-histoire .story-image {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 
 /* Soft Skills Section */
 .softskills {
@@ -745,7 +760,12 @@ hero::before {
   cursor: pointer;
 }
 
-.skill-card:hover .card-inner,
+@media (hover: hover) and (pointer: fine) {
+  .skill-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
 .skill-card.flip .card-inner {
   transform: rotateY(180deg);
 }
