@@ -102,24 +102,26 @@ window.addEventListener("scroll", function() {
 });
 // === Swiper Partenaires ===
 document.addEventListener("DOMContentLoaded", () => {
-  new Swiper(".partners-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      600: { slidesPerView: 2 },
-      900: { slidesPerView: 3 }
-    }
-  });
+  if (typeof Swiper !== "undefined" && document.querySelector(".partners-swiper")) {
+    new Swiper(".partners-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        600: { slidesPerView: 2 },
+        900: { slidesPerView: 3 }
+      }
+    });
+  }
 });
 // Flip cards on click
 document.addEventListener("DOMContentLoaded", () => {
