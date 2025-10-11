@@ -1069,3 +1069,36 @@ hero::before {
   transform: scale(0.95);
   pointer-events: none;
 }
+/* ====== Nos Valeurs with background image ====== */
+.values-bg {
+  position: relative;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),  /* optional soft dark overlay */
+    url(image/background\ valeur\ index.png) center/cover no-repeat;
+  background-attachment: fixed; /* gives elegant parallax feel */
+  color: white; /* makes text visible on darker backgrounds */
+}
+
+/* Make sure inner content stays readable */
+.values-bg h2, 
+.values-bg p, 
+.values-bg h3 {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: add a semi-transparent layer if the image is bright */
+.values-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* adjust opacity */
+  z-index: 1;
+}
+
+/* Ensure cards stay above overlay */
+.values-cards {
+  position: relative;
+  z-index: 2;
+}
