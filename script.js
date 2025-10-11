@@ -16,6 +16,17 @@ function closePopup() {
     popup.classList.remove("fade-out");
   }, 400);
 }
+
+function attachMenuToggleListeners() {
+  const burger = document.getElementById("hamburger");
+  const overlay = document.getElementById("overlay");
+
+  [burger, overlay].forEach(element => {
+    if (!element) return;
+    element.removeEventListener("click", toggleMenu);
+    element.addEventListener("click", toggleMenu);
+  });
+}
 // === Charger Header & Footer dynamiques ===
 document.addEventListener("DOMContentLoaded", () => {
   // Charger le header
@@ -25,10 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("header").innerHTML = data;
 
       // Réattacher le menu burger une fois le header chargé
-      const burger = document.getElementById("hamburger");
-      if (burger) {
-        burger.addEventListener("click", toggleMenu);
-      }
+
+      attachMenuToggleListeners();
     });
 
   // Charger le footer
@@ -71,26 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// === Menu Burger (mobile) ===
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  const burger = document.getElementById("hamburger");
-  const overlay = document.getElementById("overlay");
 
-  nav.classList.toggle("show");
-  burger.classList.toggle("active");
-  overlay.classList.toggle("show");
-}
-
-// === Fermer le popup newsletter manuellement ===
-function closePopup() {
-  const popup = document.getElementById("popup");
-  popup.classList.add("fade-out");
-  setTimeout(() => {
-    popup.style.display = "none";
-    popup.classList.remove("fade-out");
-  }, 400);
-}
 // === Effet sticky header ===
 window.addEventListener("scroll", function() {
   const header = document.querySelector("header");
@@ -150,33 +140,51 @@ new Swiper(".team-swiper", {
   }
 });
 
-// === Filtrage du portfolio (fade + collapse) ===
-document.addEventListener("DOMContentLoaded", () => {
-  const DURATION = 400; // must match CSS transition time
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projects = document.querySelectorAll(".project-card");
+// === Portfolio filter (fade + collapse + event delegation) ===
+(function initPortfolioFilter() {
+  const DURATION = 400; // keep in sync with CSS 0.4s
+  const filters = document.querySelector(".portfolio-filters");
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+  if (!filters || cards.length === 0) return;
 
-  // Helper: show with fade-in
-  const showCard = (card) => {
-    // If it was display:none, restore first so transition can run
-    if (card.style.display === "none") {
-      card.style.display = "";            // revert to CSS (flex)
-      // force reflow so the next class change animates
+  // helper
+  const show = (el) => {
+    if (el.style.display === "none") {
+      el.style.display = "";        // restore flow
+      // force reflow to enable transition
       // eslint-disable-next-line no-unused-expressions
-      card.offsetWidth;
+      el.offsetWidth;
     }
-    card.classList.remove("hide");
+    el.classList.remove("hide");
+    el.removeAttribute("aria-hidden");
+  };
+  const hide = (el) => {
+    if (!el.classList.contains("hide")) {
+      el.classList.add("hide");
+      el.setAttribute("aria-hidden", "true");
+      setTimeout(() => { el.style.display = "none"; }, DURATION);
+    }
   };
 
-  // Helper: hide with fade-out then collapse
-  const hideCard = (card) => {
-    if (!card.classList.contains("hide")) {
-      card.classList.add("hide");
-      setTimeout(() => {
-        card.style.display = "none";      // remove from grid flow
-      }, DURATION);
-    }
-  };
+  // delegated clicks (works even if buttons are re-rendered)
+  filters.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+
+    // active state
+    filters.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = (btn.dataset.filter || "all").toLowerCase();
+
+    cards.forEach(card => {
+      const cats = (card.dataset.category || "").toLowerCase().split(/\s+/);
+      const match = filter === "all" || cats.includes(filter);
+      match ? show(card) : hide(card);
+    });
+  });
+})();
+
 
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -198,5 +206,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
 
