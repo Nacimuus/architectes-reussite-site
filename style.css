@@ -133,6 +133,13 @@ header.scrolled .nav-links li a:hover {
   .nav-links.show {
     right: 0;
   }
+  .nav-links.show li a {
+    color: #1b263b;
+  }
+
+  .nav-links.show .cta {
+    color: #1b263b !important;
+  }
 
   .hamburger {
     display: flex;

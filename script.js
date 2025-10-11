@@ -148,28 +148,53 @@ new Swiper(".team-swiper", {
   }
 });
 
-// === Filtrage du portfolio avec animation fade ===
+// === Filtrage du portfolio (fade + collapse) ===
 document.addEventListener("DOMContentLoaded", () => {
+  const DURATION = 400; // must match CSS transition time
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projects = document.querySelectorAll(".project-card");
 
+  // Helper: show with fade-in
+  const showCard = (card) => {
+    // If it was display:none, restore first so transition can run
+    if (card.style.display === "none") {
+      card.style.display = "";            // revert to CSS (flex)
+      // force reflow so the next class change animates
+      // eslint-disable-next-line no-unused-expressions
+      card.offsetWidth;
+    }
+    card.classList.remove("hide");
+  };
+
+  // Helper: hide with fade-out then collapse
+  const hideCard = (card) => {
+    if (!card.classList.contains("hide")) {
+      card.classList.add("hide");
+      setTimeout(() => {
+        card.style.display = "none";      // remove from grid flow
+      }, DURATION);
+    }
+  };
+
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Active button style
+      // Active button state
       filterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const filter = btn.getAttribute("data-filter");
+      const filter = btn.getAttribute("data-filter").toLowerCase();
 
       projects.forEach(project => {
-        const categories = project.getAttribute("data-category");
+        const cats = (project.dataset.category || "")
+          .toLowerCase()
+          .split(/\s+/); // e.g. "afrique softskills 2024"
 
-        if (filter === "all" || categories.includes(filter)) {
-          project.classList.remove("hide");
-        } else {
-          project.classList.add("hide");
-        }
+        const match = (filter === "all") || cats.includes(filter);
+
+        if (match) showCard(project);
+        else hideCard(project);
       });
     });
   });
 });
+
