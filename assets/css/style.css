@@ -277,3 +277,47 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
 @media(min-width:601px) and (max-width:860px){.grid4,.kpis,.posts,.support-grid{grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 
+
+/* ===== ajouts refonte page par page ===== */
+/* hero plein cadre avec image */
+.hero.img,.phero.img{background:var(--ink);color:#fff;position:relative;overflow:hidden;border-bottom:none}
+.hero.img .bg,.phero.img .bg{position:absolute;inset:0;background-size:cover;background-position:center bottom;z-index:0}
+.hero.img .scrim,.phero.img .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(12,18,15,.88) 0%,rgba(12,18,15,.68) 42%,rgba(12,18,15,.30) 72%,rgba(12,18,15,.12) 100%)}
+.hero.img .wrap,.phero.img .wrap{position:relative;z-index:2}
+.hero.img h1,.phero.img h1{color:#fff}
+.hero.img .lead,.phero.img .lead{color:#E7ECE8}
+.hero.img .tag{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28);color:#fff}
+.hero.img .tag .dot{background:var(--gold);box-shadow:0 0 0 4px rgba(255,215,0,.2)}
+.hero.img .btn-solid{background:#fff;color:var(--ink)}
+.hero.img .btn-ghost,.phero.img .btn-ghost{border-color:#fff;color:#fff}
+.hero.img .btn-ghost:hover,.phero.img .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+/* pictogrammes raison d'être */
+.pictos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px}
+.picto .ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:var(--green-tint);color:var(--green-deep)}
+.picto:nth-child(2) .ic{background:rgba(255,215,0,.16);color:var(--amber)}
+.picto:nth-child(3) .ic{background:rgba(0,115,230,.10);color:var(--blue)}
+.picto h3{font-size:1.3rem;margin-bottom:6px}
+.picto p{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+.bubble{display:inline-flex;align-items:center;gap:10px;margin-top:36px;background:var(--green-deep);color:#fff;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:transform .15s,background .2s}
+.bubble:hover{transform:translateY(-1px);background:#1d5a2e}
+
+/* équipe : photos + 4 membres */
+.tgrid.four{grid-template-columns:repeat(4,1fr)}
+.avatar.photo{background-size:cover;background-position:center;border:2px solid #fff;box-shadow:0 4px 14px rgba(19,32,26,.12);color:transparent}
+
+/* mission en blocs piliers */
+.mvblocks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.mvb{background:#1E2C24;border:1px solid #2A3A31;border-radius:var(--r);padding:22px;border-top:4px solid var(--green)}
+.mvb.o{border-top-color:var(--gold)} .mvb.b{border-top-color:var(--blue)}
+.mvb h4{color:#fff;font-size:1.15rem;margin-bottom:8px}
+.mvb p{color:#C7D1CA;font-size:13.5px;line-height:1.55}
+
+/* WhatsApp */
+.btn-wa{background:#25D366;color:#08351c;font-weight:700} .btn-wa:hover{background:#1fbd5a;transform:translateY(-1px)}
+
+@media(max-width:860px){
+  .pictos,.mvblocks{grid-template-columns:1fr}
+  .tgrid.four{grid-template-columns:1fr}
+}
+@media(min-width:601px) and (max-width:860px){.tgrid.four{grid-template-columns:repeat(2,1fr)}}

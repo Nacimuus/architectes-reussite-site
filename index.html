@@ -2,28 +2,22 @@
 layout: default
 active: accueil
 title: "Les Architectes de la Réussite — Former, équiper, transmettre"
-description: "Association loi 1901 qui relie les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique."
+description: "Notre mission : relier les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique."
 permalink: /
 ---
 
 <!-- HERO -->
-<section class="hero">
-  <svg class="arcs" viewBox="0 0 1200 900" aria-hidden="true" fill="none"><g stroke-linecap="round">
-    <circle cx="600" cy="900" r="250" stroke="var(--gold)"  stroke-width="14" opacity=".22"/>
-    <circle cx="600" cy="900" r="330" stroke="var(--blue)"  stroke-width="14" opacity=".16"/>
-    <circle cx="600" cy="900" r="410" stroke="var(--gold)"  stroke-width="14" opacity=".14"/>
-    <circle cx="600" cy="900" r="490" stroke="var(--blue)"  stroke-width="14" opacity=".11"/>
-    <circle cx="600" cy="900" r="570" stroke="var(--green)" stroke-width="14" opacity=".10"/>
-    <circle cx="600" cy="900" r="650" stroke="var(--red)"   stroke-width="14" opacity=".08"/>
-  </g></svg>
+<section class="hero img">
+  <div class="bg" style="background-image:url('{{ '/assets/img/hero-accueil.jpg' | relative_url }}')"></div>
+  <div class="scrim"></div>
   <div class="wrap">
     <div class="hero-grid">
-      <span class="tag"><span class="dot"></span> Première opération en cours — rentrée scolaire Algérie</span>
+      <span class="tag"><span class="dot"></span> Action en cours — rentrée scolaire Algérie</span>
       <h1>Former, équiper,<br>transmettre.</h1>
-      <p class="lead">Une association qui relie les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique.</p>
+      <p class="lead">Notre mission : relier les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique.</p>
       <div class="cta">
-        <a href="{{ '/programmes/' | relative_url }}" class="btn btn-solid">Découvrir nos programmes</a>
-        <a href="{{ '/soutenir/' | relative_url }}" class="btn btn-ghost">Soutenir</a>
+        <a href="{{ '/programmes/' | relative_url }}" class="btn btn-solid">Découvrir nos piliers</a>
+        <a href="{{ '/soutenir/' | relative_url }}" class="btn btn-ghost">S'engager</a>
       </div>
     </div>
   </div>
@@ -33,20 +27,32 @@ permalink: /
 <div class="ribbon">
   <div class="wrap">
     <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
-    <p><strong>Notre première opération est en cours.</strong> Collecte de rentrée scolaire à destination de l'Algérie — premiers résultats publiés en septembre 2026.</p>
+    <p><strong>Action en cours.</strong> Collecte de rentrée scolaire à destination de l'Algérie — premiers résultats publiés en septembre 2026.</p>
   </div>
 </div>
 
-<!-- RAISON D'ÊTRE -->
+<!-- RAISON D'ÊTRE (pictogrammes) -->
 <section class="raison">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Notre raison d'être</span></div>
-    <div class="body">
-      <p>Il existe, en Afrique comme dans nos quartiers, une jeunesse pleine de promesses qui n'attend qu'une main tendue et un peu de confiance pour se révéler. Les Architectes de la Réussite sont nés de cet élan — et d'un <span class="accent">attachement profond aux pays d'origine</span>, à ces terres que l'on n'oublie pas et que l'on veut servir en retour.</p>
-      <p>Nous relions les jeunesses d'un continent à l'autre, convaincus que la réussite se transmet, se partage, et grandit à mesure qu'on la fait circuler. C'est une promesse tenue dans les deux sens : révéler ceux qui sont restés proches, et rendre à l'Afrique ce qu'elle nous a donné.</p>
-      <p>Cet engagement prend trois formes indissociables : une <strong>Académie</strong> qui transmet des compétences, des <strong>actions humanitaires</strong> qui répondent aux besoins du terrain, et la <strong>solidarité numérique</strong> qui brise la fracture privant tant de jeunes des outils d'aujourd'hui.</p>
-      <a href="{{ '/qui-sommes-nous/' | relative_url }}" class="link-accent">En savoir plus sur notre histoire →</a>
+    <div class="sec-head"><span class="eyebrow">Notre raison d'être</span><h2>Trois convictions, un même cap.</h2></div>
+    <div class="pictos">
+      <div class="picto">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 6.6a3 3 0 0 1 0 5.6"/><path d="M20.5 19a5.5 5.5 0 0 0-3.2-5"/></svg></div>
+        <h3>Personne ne réussit seul</h3>
+        <p>L'accompagnement, la transmission et l'inspiration changent des destins.</p>
+      </div>
+      <div class="picto">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8.2 10.9 15.8 7.1M8.2 13.1 15.8 16.9"/></svg></div>
+        <h3>La réussite se transmet</h3>
+        <p>Elle se partage et grandit quand on la fait circuler d'une rive à l'autre.</p>
+      </div>
+      <div class="picto">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 16 Q12 6 21 16"/><path d="M3 16v3M21 16v3M12 11v7"/></svg></div>
+        <h3>On sert d'où l'on vient</h3>
+        <p>Révéler les jeunes de nos quartiers, et rendre à l'Afrique ce qu'elle nous a donné.</p>
+      </div>
     </div>
+    <a href="{{ '/qui-sommes-nous/' | relative_url }}" class="bubble">Notre histoire →</a>
   </div>
 </section>
 
@@ -84,10 +90,10 @@ permalink: /
   <div class="wrap">
     <div class="sec-head center"><span class="eyebrow">Ce qui nous guide</span><h2>Nos quatre valeurs</h2></div>
     <div class="grid4">
-      <div class="value"><div class="k"><b></b><span class="term">Japon</span></div><h3>Kaizen</h3><p>L'amélioration continue. Progresser un peu chaque jour, refuser la stagnation.</p></div>
-      <div class="value"><div class="k"><b></b><span class="term">Afrique</span></div><h3>Ubuntu</h3><p>« Je suis parce que nous sommes. » Aucune réussite n'a de sens sans le collectif.</p></div>
-      <div class="value"><div class="k"><b></b><span class="term">Japon</span></div><h3>Gambaru</h3><p>La persévérance. Avancer face aux épreuves, ne jamais renoncer.</p></div>
-      <div class="value"><div class="k"><b></b><span class="term">Notre cap</span></div><h3>Ambition</h3><p>Viser haut sans complexe, croire au potentiel de chacun.</p></div>
+      <div class="value"><div class="k"><b></b></div><h3>Kaizen</h3><p>L'amélioration continue. Progresser un peu chaque jour, refuser la stagnation.</p></div>
+      <div class="value"><div class="k"><b></b></div><h3>Ubuntu</h3><p>« Je suis parce que nous sommes. » Aucune réussite n'a de sens sans le collectif.</p></div>
+      <div class="value"><div class="k"><b></b></div><h3>Gambaru</h3><p>La persévérance. Avancer face aux épreuves, ne jamais renoncer.</p></div>
+      <div class="value"><div class="k"><b></b></div><h3>Ambition</h3><p>Viser haut sans complexe, croire au potentiel de chacun.</p></div>
     </div>
   </div>
 </section>
@@ -119,7 +125,7 @@ permalink: /
 <section class="cta-don">
   <div class="wrap">
     <h2>Nous démarrons — votre soutien compte double.</h2>
-    <p>Chaque don, chaque don en nature, chaque relais nous aide à réaliser notre première opération.</p>
+    <p>Chaque don, chaque don en nature, chaque relais nous aide à réaliser notre première action.</p>
     <div class="cta"><a href="{{ '/soutenir/' | relative_url }}" class="btn btn-don">Faire un don</a><a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Nous contacter</a></div>
   </div>
 </section>
