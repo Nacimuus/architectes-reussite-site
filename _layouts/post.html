@@ -1,0 +1,21 @@
+---
+layout: default
+active: actualites
+---
+<section class="phero">
+  <div class="wrap">
+    <div class="crumb"><a href="{{ '/actualites/' | relative_url }}">Actualités</a></div>
+    <span class="eyebrow">{{ page.date | date: "%-d %B %Y" }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="post-body">
+      {{ content }}
+      <p style="margin-top:32px"><a href="{{ '/actualites/' | relative_url }}" class="link-accent">← Toutes les actualités</a></p>
+    </div>
+  </div>
+</section>

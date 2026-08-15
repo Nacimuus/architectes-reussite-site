@@ -1,0 +1,28 @@
+{% assign a = page.active %}
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Logo Les Architectes de la Réussite">
+      <span>Les Architectes<small>de la Réussite</small></span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="{{ '/' | relative_url }}" {% if a == 'accueil' %}aria-current="page"{% endif %}>Accueil</a>
+      <a href="{{ '/qui-sommes-nous/' | relative_url }}" {% if a == 'qui' %}aria-current="page"{% endif %}>Qui sommes-nous</a>
+      <a href="{{ '/programmes/' | relative_url }}" {% if a == 'programmes' %}aria-current="page"{% endif %}>Programmes</a>
+      <a href="{{ '/actualites/' | relative_url }}" {% if a == 'actualites' %}aria-current="page"{% endif %}>Actualités</a>
+      <a href="{{ '/soutenir/' | relative_url }}" {% if a == 'soutenir' %}aria-current="page"{% endif %}>Soutenir</a>
+      <a href="{{ '/contact/' | relative_url }}" {% if a == 'contact' %}aria-current="page"{% endif %}>Contact</a>
+    </nav>
+    <a href="{{ '/soutenir/' | relative_url }}" class="btn btn-don">Faire un don</a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-menu" aria-label="Navigation mobile">
+    <a href="{{ '/' | relative_url }}">Accueil</a>
+    <a href="{{ '/qui-sommes-nous/' | relative_url }}">Qui sommes-nous</a>
+    <a href="{{ '/programmes/' | relative_url }}">Programmes</a>
+    <a href="{{ '/actualites/' | relative_url }}">Actualités</a>
+    <a href="{{ '/soutenir/' | relative_url }}">Soutenir</a>
+    <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    <a href="{{ '/soutenir/' | relative_url }}">Faire un don</a>
+  </nav>
+</header>

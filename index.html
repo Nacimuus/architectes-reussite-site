@@ -1,169 +1,142 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Les Architectes de la Réussite</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+---
+layout: default
+active: accueil
+title: "Les Architectes de la Réussite — Former, équiper, transmettre"
+description: "Association loi 1901 qui relie les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique."
+permalink: /
+---
 
-  <!-- Font Awesome pour icônes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Leaflet.js pour la carte -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-  <!-- AOS (animations) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-</head>
-
-<body>
-
-  <!-- Header -->
-  <div id="header"></div>
-
-  <!-- CONTENU PRINCIPAL -->
-  <main>
-    <!-- Hero -->
-    <section class="hero" data-aos="fade-up">
-      <div class="hero-content">
-        <h1>Former, inspirer et connecter la jeunesse à travers le monde</h1>
-        <p>Nous créons des opportunités  grâce à la formation, l’éducation et un accompagnement continu.</p>
-        <a href="initiatives.html" class="btn-primary" data-aos="zoom-in" data-aos-delay="300">Découvrir Nos Initiatives</a>
+<!-- HERO -->
+<section class="hero">
+  <svg class="arcs" viewBox="0 0 1200 900" aria-hidden="true" fill="none"><g stroke-linecap="round">
+    <circle cx="600" cy="900" r="250" stroke="var(--gold)"  stroke-width="14" opacity=".22"/>
+    <circle cx="600" cy="900" r="330" stroke="var(--blue)"  stroke-width="14" opacity=".16"/>
+    <circle cx="600" cy="900" r="410" stroke="var(--gold)"  stroke-width="14" opacity=".14"/>
+    <circle cx="600" cy="900" r="490" stroke="var(--blue)"  stroke-width="14" opacity=".11"/>
+    <circle cx="600" cy="900" r="570" stroke="var(--green)" stroke-width="14" opacity=".10"/>
+    <circle cx="600" cy="900" r="650" stroke="var(--red)"   stroke-width="14" opacity=".08"/>
+  </g></svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <span class="tag"><span class="dot"></span> Première opération en cours — rentrée scolaire Algérie</span>
+      <h1>Former, équiper,<br>transmettre.</h1>
+      <p class="lead">Une association qui relie les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique.</p>
+      <div class="cta">
+        <a href="{{ '/programmes/' | relative_url }}" class="btn btn-solid">Découvrir nos programmes</a>
+        <a href="{{ '/soutenir/' | relative_url }}" class="btn btn-ghost">Soutenir</a>
       </div>
-    </section>
-<!-- Actions en cours (hidden by default, revealed via JS if data exists) -->
-<section id="actions-en-cours" class="actions hidden">
-  <h2 data-aos="fade-up">Actions en cours</h2>
-  <div class="actions-grid" id="actionsGrid"></div>
+    </div>
+  </div>
 </section>
 
+<!-- RIBBON -->
+<div class="ribbon">
+  <div class="wrap">
+    <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
+    <p><strong>Notre première opération est en cours.</strong> Collecte de rentrée scolaire à destination de l'Algérie — premiers résultats publiés en septembre 2026.</p>
+  </div>
+</div>
 
-    <section class="pourquoi-nous">
-      <div class="container">
-        <!-- Colonne texte -->
-        <div class="text-content" data-aos="fade-right">
-          <h2>Pourquoi Nous ?</h2>
-          <p>
-            Nous croyons en une Afrique où chaque jeune peut briller ✨.<br>
-            Nous partageons notre expertise et notre expérience pour <strong>co-construire le futur</strong> avec la jeunesse.<br>
-            Notre mission est faite d’amour, de compassion et d’espoir 🌍.
-          </p>
-        </div>
-    
-        <!-- Colonne bulles -->
-        <div class="bubbles-content" data-aos="fade-left">
-          <div class="bubbles">
-            <span>Espoir</span>
-            <span>Compassion</span>
-            <span>Partage</span>
-            <span>Avenir</span>
-            <span>Éducation</span>
-            <span>Unité</span>
-          </div>
-        </div>
+<!-- RAISON D'ÊTRE -->
+<section class="raison">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Notre raison d'être</span></div>
+    <div class="body">
+      <p>Il existe, en Afrique comme dans nos quartiers, une jeunesse pleine de promesses qui n'attend qu'une main tendue et un peu de confiance pour se révéler. Les Architectes de la Réussite sont nés de cet élan — et d'un <span class="accent">attachement profond aux pays d'origine</span>, à ces terres que l'on n'oublie pas et que l'on veut servir en retour.</p>
+      <p>Nous relions les jeunesses d'un continent à l'autre, convaincus que la réussite se transmet, se partage, et grandit à mesure qu'on la fait circuler. C'est une promesse tenue dans les deux sens : révéler ceux qui sont restés proches, et rendre à l'Afrique ce qu'elle nous a donné.</p>
+      <p>Cet engagement prend trois formes indissociables : une <strong>Académie</strong> qui transmet des compétences, des <strong>actions humanitaires</strong> qui répondent aux besoins du terrain, et la <strong>solidarité numérique</strong> qui brise la fracture privant tant de jeunes des outils d'aujourd'hui.</p>
+      <a href="{{ '/qui-sommes-nous/' | relative_url }}" class="link-accent">En savoir plus sur notre histoire →</a>
+    </div>
+  </div>
+</section>
+
+<div class="rip"><svg viewBox="0 0 120 26" fill="none"><g stroke-linecap="round"><path d="M10 24 A50 50 0 0 1 110 24" stroke="var(--gold)" stroke-width="3"/><path d="M26 24 A34 34 0 0 1 94 24" stroke="var(--blue)" stroke-width="3"/><path d="M42 24 A18 18 0 0 1 78 24" stroke="var(--green)" stroke-width="3"/></g></svg></div>
+
+<!-- PILIERS -->
+<section class="piliers">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Nos trois piliers</span><h2>Un même but, trois manières d'agir.</h2></div>
+    <div class="grid3">
+      <div class="pillar aca"><span class="bar"></span>
+        <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
+        <h3>Académie</h3>
+        <p>Transmettre des compétences aux jeunes de France et d'Afrique : soft skills, gestion de projet, création d'entreprise, digital.</p>
+        <a href="{{ '/programmes/academie/' | relative_url }}" class="more">En savoir plus →</a>
       </div>
-    </section>
-    
-    <!-- Valeurs -->
-    <section class="values values-bg" id="values">
-      <h2 data-aos="fade-up">Nos Valeurs</h2>
-      <div class="values-cards">
-        
-        <!-- Kaizen -->
-        <div class="value-card kaizen" data-aos="fade-up" data-aos-delay="0">
-          <div class="card-content">
-            <h3>Kaizen</h3>
-            <p>L’amélioration continue dans tout ce que nous entreprenons.</p>
-          </div>
-        </div>
-    
-        <!-- Ubuntu -->
-        <div class="value-card ubuntu" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-content">
-            <h3>Ubuntu</h3>
-            <p>Je suis parce que nous sommes : solidarité et humanité.</p>
-          </div>
-        </div>
-    
-        <!-- Gambaru -->
-        <div class="value-card gambaru" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-content">
-            <h3>Gambaru</h3>
-            <p>Persévérance et résilience face aux défis.</p>
-          </div>
-        </div>
-    
+      <div class="pillar hum"><span class="bar"></span>
+        <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
+        <h3>Actions humanitaires</h3>
+        <p>Collecter en Europe et distribuer sur le terrain : matériel scolaire, « starter packs » de rentrée, soutien aux plus vulnérables.</p>
+        <a href="{{ '/programmes/actions-humanitaires/' | relative_url }}" class="more">En savoir plus →</a>
       </div>
-    </section>
-    
-
-    <!-- Partenaires -->
-    <section class="partners">
-      <h2 data-aos="fade-up">Nos Partenaires</h2>
-    
-      <!-- Swiper Container -->
-      <div class="swiper partners-swiper" data-aos="zoom-in">
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide"><img src="images/partner1.png" alt="Partenaire 1"></div>
-          <div class="swiper-slide"><img src="images/partner2.png" alt="Partenaire 2"></div>
-          <div class="swiper-slide"><img src="images/partner3.png" alt="Partenaire 3"></div>
-          <div class="swiper-slide"><img src="images/partner4.png" alt="Partenaire 4"></div>
-          <div class="swiper-slide"><img src="images/partner5.png" alt="Partenaire 5"></div>
-          <div class="swiper-slide"><img src="images/partner6.png" alt="Partenaire 6"></div>
-        </div>
-    
-        <!-- Pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- Navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+      <div class="pillar num"><span class="bar"></span>
+        <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
+        <h3>Solidarité numérique</h3>
+        <p>Lutter contre la fracture numérique : collecter et reconditionner du matériel, équiper les structures partenaires, faciliter l'accès.</p>
+        <a href="{{ '/programmes/solidarite-numerique/' | relative_url }}" class="more">En savoir plus →</a>
       </div>
-    </section>
-    
+    </div>
+  </div>
+</section>
 
-    <!-- Carte du Monde -->
-    <section class="world-map" data-aos="fade-up">
-      <h2>Notre Impact à l’Échelle Mondiale</h2>
-      <p>Découvrez où nous formons, soutenons et accompagnons la jeunesse à travers le monde.</p>
-      <div id="map" data-aos="zoom-in"></div>
-    </section>
-  </main>
+<!-- VALEURS -->
+<section class="valeurs">
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Ce qui nous guide</span><h2>Nos quatre valeurs</h2></div>
+    <div class="grid4">
+      <div class="value"><div class="k"><b></b><span class="term">Japon</span></div><h3>Kaizen</h3><p>L'amélioration continue. Progresser un peu chaque jour, refuser la stagnation.</p></div>
+      <div class="value"><div class="k"><b></b><span class="term">Afrique</span></div><h3>Ubuntu</h3><p>« Je suis parce que nous sommes. » Aucune réussite n'a de sens sans le collectif.</p></div>
+      <div class="value"><div class="k"><b></b><span class="term">Japon</span></div><h3>Gambaru</h3><p>La persévérance. Avancer face aux épreuves, ne jamais renoncer.</p></div>
+      <div class="value"><div class="k"><b></b><span class="term">Notre cap</span></div><h3>Ambition</h3><p>Viser haut sans complexe, croire au potentiel de chacun.</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <div id="footer"></div>
+<!-- RAYONNEMENT -->
+<section class="reach">
+  <div class="wrap">
+    <span class="eyebrow">Notre rayonnement</span>
+    <h2>Un pont entre l'Europe et l'Afrique</h2>
+    <p class="sub">Deux continents, un même élan : nous relions les jeunesses des deux rives et faisons circuler compétences et solidarité.</p>
+    <div class="bridge">
+      <div class="cont eu"><span class="tag2">Europe</span><h3>Nous mobilisons</h3><p>Collecte de biens et de matériel, soutien et formation des jeunes — à commencer par les quartiers français.</p></div>
+      <div class="span" aria-hidden="true">
+        <svg viewBox="0 0 220 120" fill="none">
+          <g stroke-linecap="round">
+            <path d="M18 96 Q110 6 202 96" stroke="var(--gold)" stroke-width="6"/>
+            <path d="M40 96 Q110 30 180 96" stroke="var(--blue-soft)" stroke-width="6"/>
+            <path d="M62 96 Q110 52 158 96" stroke="var(--green)" stroke-width="6"/>
+          </g>
+          <g fill="#fff" opacity=".9"><rect x="15" y="96" width="6" height="20" rx="2"/><rect x="107" y="70" width="6" height="46" rx="2"/><rect x="199" y="96" width="6" height="20" rx="2"/></g>
+        </svg>
+      </div>
+      <div class="cont af"><span class="tag2">Afrique</span><h3>Nous agissons</h3><p>Distributions, équipement numérique et transmission sur le terrain, auprès des jeunesses africaines francophones.</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Init animations
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
+<!-- CTA -->
+<section class="cta-don">
+  <div class="wrap">
+    <h2>Nous démarrons — votre soutien compte double.</h2>
+    <p>Chaque don, chaque don en nature, chaque relais nous aide à réaliser notre première opération.</p>
+    <div class="cta"><a href="{{ '/soutenir/' | relative_url }}" class="btn btn-don">Faire un don</a><a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Nous contacter</a></div>
+  </div>
+</section>
 
-    // Init Leaflet map
-    document.addEventListener("DOMContentLoaded", function() {
-      const map = L.map('map').setView([20,0], 2);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributeurs'
-      }).addTo(map);
-
-      // Marqueurs exemples
-      L.marker([48.8566, 2.3522]).addTo(map).bindPopup("Paris - Siège partenaire");
-      L.marker([5.6037, -0.1870]).addTo(map).bindPopup("Accra, Ghana - Académie de formation");
-      L.marker([-1.2921, 36.8219]).addTo(map).bindPopup("Nairobi, Kenya - Programme jeunesse");
-      L.marker([34.0522, -118.2437]).addTo(map).bindPopup("Los Angeles - Organisation partenaire");
-    });
-  </script>
-  <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-</body>
-</html>
+<!-- NEWSLETTER -->
+<section class="news">
+  <div class="wrap"><div class="box">
+    <span class="eyebrow">Newsletter</span>
+    <h2 style="font-size:2rem;margin-top:10px">Restez informé de nos actions</h2>
+    {% if site.org.formspree != "" %}
+    <form action="{{ site.org.formspree }}" method="POST">
+    {% else %}
+    <form action="#" method="POST" onsubmit="return false">
+    {% endif %}
+      <input type="email" name="email" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail" required>
+      <button class="btn btn-solid" type="submit">S'inscrire</button>
+    </form>
+    <label class="consent"><input type="checkbox" required> J'accepte de recevoir la newsletter et la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</label>
+  </div></div>
+</section>

@@ -1,0 +1,45 @@
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 96" preserveAspectRatio="none">
+    <path fill="#3CB043" d="M0,52 C300,20 520,74 720,46 C940,18 1160,72 1440,44 L1440,96 L0,96 Z"/>
+    <path fill="#FFD700" d="M0,64 C300,34 520,86 720,60 C940,32 1160,84 1440,58 L1440,96 L0,96 Z"/>
+    <path fill="#FF5733" d="M0,76 C300,50 520,98 720,74 C940,48 1160,96 1440,72 L1440,96 L0,96 Z"/>
+  </svg>
+</div>
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Les Architectes de la Réussite</h4>
+        <p class="faddr">Association loi 1901<br>
+          {{ site.org.address }}<br><br>
+          {% if site.org.email != "" %}{{ site.org.email }}{% else %}contact@… <em style="opacity:.6">(à venir)</em>{% endif %}
+        </p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="fnav">
+          <a href="{{ '/qui-sommes-nous/' | relative_url }}">Qui sommes-nous</a>
+          <a href="{{ '/programmes/' | relative_url }}">Programmes</a>
+          <a href="{{ '/actualites/' | relative_url }}">Actualités</a>
+          <a href="{{ '/soutenir/' | relative_url }}">Soutenir</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <div class="fnav">
+          <a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
+          <a href="{{ '/politique-confidentialite/' | relative_url }}">Politique de confidentialité</a>
+          {% if site.org.linkedin != "" %}<a href="{{ site.org.linkedin }}">LinkedIn</a>{% else %}<a href="#">LinkedIn <em style="opacity:.6">(à venir)</em></a>{% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>© {{ 'now' | date: "%Y" }} Les Architectes de la Réussite — Tous droits réservés.</span>
+      <span style="display:inline-flex;align-items:center;gap:9px;opacity:.75">
+        <span class="colonnade" style="color:#fff;height:16px;gap:3px"><i style="width:5px"></i><i style="width:5px"></i><i style="width:5px"></i><i style="width:5px"></i><i style="width:5px"></i></span>
+        Bâtir des ponts.
+      </span>
+    </div>
+  </div>
+</footer>

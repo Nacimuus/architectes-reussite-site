@@ -1,0 +1,39 @@
+---
+layout: default
+active: actualites
+title: "Actualités"
+description: "Les nouvelles de l'association : opérations, coulisses, avancées de nos trois piliers."
+permalink: /actualites/
+---
+
+<section class="phero">
+  <svg class="arcs" viewBox="0 0 1000 700" aria-hidden="true" fill="none"><g>
+    <circle cx="500" cy="700" r="210" stroke="var(--gold)" stroke-width="12" opacity=".18"/>
+    <circle cx="500" cy="700" r="290" stroke="var(--blue)" stroke-width="12" opacity=".13"/>
+    <circle cx="500" cy="700" r="370" stroke="var(--green)" stroke-width="12" opacity=".10"/>
+  </g></svg>
+  <div class="wrap">
+    <span class="eyebrow">Actualités</span>
+    <h1>Ce qui nous anime.</h1>
+    <p class="lead">Les avancées de nos trois piliers, les coulisses de nos opérations et les nouvelles de l'association.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    {% if site.posts.size > 0 %}
+    <div class="posts">
+      {% for post in site.posts %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <span class="date">{{ post.date | date: "%-d %B %Y" }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+        <span class="link-accent" style="margin-top:auto">Lire →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="hint">Les premiers articles arriveront très bientôt.</p>
+    {% endif %}
+  </div>
+</section>

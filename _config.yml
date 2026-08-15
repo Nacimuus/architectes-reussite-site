@@ -1,0 +1,35 @@
+title: "Les Architectes de la Réussite"
+tagline: "Former, équiper, transmettre"
+description: >-
+  Association loi 1901 qui relie les jeunesses de France et d'Afrique par la
+  formation, l'action humanitaire et la solidarité numérique.
+lang: fr
+
+# --- URL ---
+# Pour un site de projet GitHub Pages (nacimuus.github.io/architectes-reussite-site) :
+url: "https://nacimuus.github.io"
+baseurl: "/architectes-reussite-site"
+# Quand le nom de domaine personnalisé sera branché, remplacez par :
+#   url: "https://votre-domaine.org"
+#   baseurl: ""
+
+# --- Coordonnées association ---
+org:
+  address: "36 rue Baudin, 92400 Courbevoie, France"
+  email: ""          # à renseigner en Phase 0 (email officiel)
+  rna: ""            # à compléter dès réception du récépissé
+  linkedin: ""       # à renseigner
+  helloasso: ""      # URL de la campagne HelloAsso (Phase 0)
+  formspree: ""      # ex. https://formspree.io/f/xxxxxx (contact + newsletter)
+
+# --- Build ---
+permalink: pretty
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,35 @@
+---
+layout: default
+title: "Mentions légales"
+description: "Mentions légales du site de l'association Les Architectes de la Réussite."
+permalink: /mentions-legales/
+---
+
+<section class="phero"><div class="wrap">
+  <span class="eyebrow">Informations</span>
+  <h1>Mentions légales</h1>
+</div></section>
+
+<section><div class="wrap">
+  <div class="note-box"><strong>À relire avant publication.</strong> Ce texte est un modèle à valider — complétez les éléments entre crochets et faites-le vérifier si besoin.</div>
+  <div class="rich">
+    <h2>Éditeur du site</h2>
+    <p><strong>Les Architectes de la Réussite</strong>, association régie par la loi du 1<sup>er</sup> juillet 1901.<br>
+    Siège social : {{ site.org.address }}<br>
+    Numéro RNA : {% if site.org.rna != "" %}{{ site.org.rna }}{% else %}[à compléter]{% endif %}<br>
+    Directeur de la publication : Nacim Touenti, Président.<br>
+    Contact : {% if site.org.email != "" %}{{ site.org.email }}{% else %}[e-mail à compléter]{% endif %}</p>
+
+    <h2>Hébergement</h2>
+    <p>Le site est hébergé par <strong>GitHub, Inc.</strong> — 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis (service GitHub Pages).</p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble des contenus de ce site (textes, logo, éléments graphiques) est la propriété de l'association, sauf mention contraire. Toute reproduction sans autorisation est interdite.</p>
+
+    <h2>Responsabilité</h2>
+    <p>L'association s'efforce d'assurer l'exactitude des informations publiées, sans pouvoir en garantir l'exhaustivité. Les liens vers des sites tiers n'engagent pas la responsabilité de l'association.</p>
+
+    <h2>Données personnelles</h2>
+    <p>Le traitement des données est décrit dans notre <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</p>
+  </div>
+</div></section>
