@@ -383,3 +383,28 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
   .terr-grid{grid-template-columns:1fr}.fgroup .lbl{width:auto}
 }
 @media(min-width:601px) and (max-width:860px){.terr-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== pages piliers : bulle flottante + qui nous équipons + retour hub ===== */
+.crumb.dark{color:rgba(255,255,255,.8)} .crumb.dark a{color:#fff;text-decoration:underline}
+.hero.img .status,.phero.img .status{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+.hero.img .status b{background:var(--gold)}
+
+.float-sec{position:relative}
+.float-sec .txt{max-width:640px}
+.bubble-img{position:absolute;right:20px;bottom:-84px;width:290px;height:290px;border-radius:50%;background-size:cover;background-position:center;border:7px solid var(--ivory);box-shadow:0 26px 54px rgba(19,32,26,.22);z-index:6}
+.bubble-img span{position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(60,176,67,.45)}
+.after-bubble{padding-top:120px}
+@media(max-width:960px){
+  .bubble-img{position:relative;right:auto;bottom:auto;width:210px;height:210px;margin:30px auto 0;display:block}
+  .after-bubble{padding-top:56px}
+}
+
+.equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.equip{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 20px;border-top:4px solid var(--blue)}
+.equip .ic{width:44px;height:44px;border-radius:12px;background:rgba(0,115,230,.10);color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.equip h3{font-size:1.15rem;margin-bottom:6px}
+.equip p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.back-hub{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-weight:600;color:var(--ink-soft)}
+.back-hub:hover{color:var(--ink)}
+@media(max-width:860px){.equip-grid{grid-template-columns:1fr}}
+@media(min-width:601px) and (max-width:860px){.equip-grid{grid-template-columns:repeat(2,1fr)}}
