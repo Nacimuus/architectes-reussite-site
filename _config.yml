@@ -24,6 +24,10 @@ org:
 
 # --- Build ---
 permalink: pretty
+
+collections:
+  activites:
+    output: false
 markdown: kramdown
 plugins:
   - jekyll-seo-tag

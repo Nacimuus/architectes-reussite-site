@@ -1,39 +1,165 @@
 ---
 layout: default
 active: actualites
-title: "Actualités"
-description: "Les nouvelles de l'association : opérations, coulisses, avancées de nos trois piliers."
+title: "Le terrain"
+description: "Les avancées de nos trois piliers, les coulisses de nos opérations et les nouvelles de l'association."
 permalink: /actualites/
 ---
 
-<section class="phero">
-  <svg class="arcs" viewBox="0 0 1000 700" aria-hidden="true" fill="none"><g>
-    <circle cx="500" cy="700" r="210" stroke="var(--gold)" stroke-width="12" opacity=".18"/>
-    <circle cx="500" cy="700" r="290" stroke="var(--blue)" stroke-width="12" opacity=".13"/>
-    <circle cx="500" cy="700" r="370" stroke="var(--green)" stroke-width="12" opacity=".10"/>
-  </g></svg>
+<!-- HERO compact -->
+<section class="terr-head">
   <div class="wrap">
-    <span class="eyebrow">Actualités</span>
     <h1>Ce qui nous anime.</h1>
-    <p class="lead">Les avancées de nos trois piliers, les coulisses de nos opérations et les nouvelles de l'association.</p>
+    <p>Les avancées de nos trois piliers, les coulisses de nos opérations et les nouvelles de l'association.</p>
   </div>
 </section>
 
+{% assign acts = site.activites | sort: "date" | reverse %}
+{% assign featured = acts | where: "featured", true | first %}
+
+<!-- À LA UNE -->
+<div class="une-wrap">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:20px"><span class="eyebrow">À la une</span></div>
+    {% if featured %}
+    <article class="une">
+      <div class="visual {% if featured.image %}photo{% endif %}" {% if featured.image %}style="background-image:url('{{ featured.image | relative_url }}')"{% endif %}>
+        {% unless featured.image %}
+        <svg class="arcs" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none"><g stroke-linecap="round">
+          <circle cx="300" cy="400" r="150" stroke="#FFD700" stroke-width="10" opacity=".5"/><circle cx="300" cy="400" r="210" stroke="#4AA3FF" stroke-width="10" opacity=".35"/><circle cx="300" cy="400" r="270" stroke="#3CB043" stroke-width="10" opacity=".28"/></g></svg>
+        <div class="ph"><span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span><span class="country">{{ featured.pays }}</span></div>
+        {% endunless %}
+      </div>
+      <div class="body">
+        <div class="tags"><span class="pilltag hum">{{ featured.pilier }}</span></div>
+        <h2>{{ featured.title }}</h2>
+        <div class="meta">{{ featured.date | date: "%-d %B %Y" }} · {{ featured.pays }}</div>
+        <p class="desc">{{ featured.excerpt }}</p>
+      </div>
+    </article>
+    {% else %}
+    <!-- À la une par défaut : opération Algérie en cours -->
+    <article class="une">
+      <div class="visual">
+        <svg class="arcs" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none"><g stroke-linecap="round">
+          <circle cx="300" cy="400" r="150" stroke="#FFD700" stroke-width="10" opacity=".5"/>
+          <circle cx="300" cy="400" r="210" stroke="#4AA3FF" stroke-width="10" opacity=".35"/>
+          <circle cx="300" cy="400" r="270" stroke="#3CB043" stroke-width="10" opacity=".28"/>
+          <circle cx="300" cy="400" r="330" stroke="#FF5733" stroke-width="10" opacity=".2"/></g></svg>
+        <span class="chip">Photos &amp; bilan — septembre 2026</span>
+        <div class="ph"><span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span><span class="country">Algérie</span></div>
+      </div>
+      <div class="body">
+        <div class="tags"><span class="pilltag hum">Actions humanitaires</span><span class="pilltag live">En cours</span></div>
+        <h2>Collecte de rentrée scolaire</h2>
+        <div class="meta">Été 2026 · Algérie</div>
+        <p class="desc">Notre toute première opération est en cours : constituer et acheminer des « starter packs » scolaires complets — cahiers, stylos, cartables, fournitures — pour des enfants accueillis en orphelinat, avant la rentrée.</p>
+        <p class="note">Premiers résultats, chiffres et images publiés en septembre 2026.</p>
+      </div>
+    </article>
+    {% endif %}
+  </div>
+</div>
+
+<!-- GALERIE FILTRABLE -->
 <section>
   <div class="wrap">
-    {% if site.posts.size > 0 %}
-    <div class="posts">
-      {% for post in site.posts %}
-      <a class="post-card" href="{{ post.url | relative_url }}">
-        <span class="date">{{ post.date | date: "%-d %B %Y" }}</span>
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
-        <span class="link-accent" style="margin-top:auto">Lire →</span>
-      </a>
+    <div class="sec-head"><span class="eyebrow">Toutes nos actions</span><h2>Notre journal de terrain</h2></div>
+
+    {% if acts.size > 0 %}
+    {% assign piliers = acts | map: "pilier" | uniq %}
+    {% assign pays = acts | map: "pays" | uniq %}
+    {% assign years = "" %}
+    {% for a in acts %}{% assign y = a.date | date: "%Y" %}{% unless years contains y %}{% assign years = years | append: y | append: "," %}{% endunless %}{% endfor %}
+    {% assign yearlist = years | split: "," %}
+
+    <div class="filters">
+      <div class="fgroup"><span class="lbl">Pilier</span>
+        <button class="chipbtn active" data-group="pilier" data-value="tout">Tout</button>
+        {% for p in piliers %}<button class="chipbtn" data-group="pilier" data-value="{{ p }}">{{ p }}</button>{% endfor %}
+      </div>
+      <div class="fgroup"><span class="lbl">Pays</span>
+        <button class="chipbtn active" data-group="pays" data-value="tout">Tout</button>
+        {% for c in pays %}<button class="chipbtn" data-group="pays" data-value="{{ c }}">{{ c }}</button>{% endfor %}
+      </div>
+      <div class="fgroup"><span class="lbl">Année</span>
+        <button class="chipbtn active" data-group="annee" data-value="tout">Tout</button>
+        {% for y in yearlist %}<button class="chipbtn" data-group="annee" data-value="{{ y }}">{{ y }}</button>{% endfor %}
+      </div>
+    </div>
+
+    <div class="terr-grid">
+      {% for a in acts %}
+      {% assign cls = "" %}{% if a.pilier == "Académie" %}{% assign cls = "aca" %}{% elsif a.pilier contains "numérique" %}{% assign cls = "num" %}{% else %}{% assign cls = "hum" %}{% endif %}
+      {% if a.video != "" and a.video %}<a class="terr-card" href="{{ a.video }}" target="_blank" rel="noopener"{% else %}<div class="terr-card"{% endif %} data-pilier="{{ a.pilier }}" data-pays="{{ a.pays }}" data-annee="{{ a.date | date: '%Y' }}">
+        <div class="thumb" {% if a.image %}style="background-image:url('{{ a.image | relative_url }}')"{% endif %}>
+          {% if a.video != "" and a.video %}<div class="play"><span>▶</span></div>{% endif %}
+        </div>
+        <div class="c">
+          <div class="ct"><span>{{ a.pilier }}</span><span>{{ a.pays }}</span></div>
+          <h3>{{ a.title }}</h3>
+          <div class="date">{{ a.date | date: "%-d %B %Y" }}</div>
+          {% if a.excerpt %}<p>{{ a.excerpt }}</p>{% endif %}
+        </div>
+      {% if a.video != "" and a.video %}</a>{% else %}</div>{% endif %}
       {% endfor %}
     </div>
+    <div class="no-result">Aucune action ne correspond à ces filtres.</div>
     {% else %}
-    <p class="hint">Les premiers articles arriveront très bientôt.</p>
+    <div class="terr-empty">
+      <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
+      <h3>Nos premières actions arrivent</h3>
+      <p>Résultats de l'opération Algérie en septembre 2026.</p>
+    </div>
     {% endif %}
   </div>
 </section>
+
+<!-- CARTE (à venir) -->
+<div class="map-soon">
+  <div class="wrap">
+    <span class="eyebrow">Bientôt</span>
+    <h3>La carte de nos actions</h3>
+    <p>Une carte interactive de nos interventions, pays par pays — dès que le terrain se remplit.</p>
+    <svg width="360" height="120" viewBox="0 0 360 120" fill="none" aria-hidden="true">
+      <g fill="#C9BFA8">
+        <circle cx="60" cy="40" r="4"/><circle cx="95" cy="55" r="4"/><circle cx="130" cy="35" r="4"/>
+        <circle cx="150" cy="75" r="4"/><circle cx="185" cy="60" r="4"/><circle cx="210" cy="90" r="4"/>
+        <circle cx="245" cy="50" r="4"/><circle cx="280" cy="70" r="4"/><circle cx="300" cy="45" r="4"/>
+      </g>
+      <g stroke="#C9BFA8" stroke-width="1.4" stroke-dasharray="3 4" opacity=".8">
+        <path d="M60 40 Q150 10 245 50"/><path d="M95 55 Q180 100 300 45"/>
+      </g>
+      <circle cx="130" cy="35" r="7" fill="none" stroke="#FFD700" stroke-width="2"/>
+      <circle cx="185" cy="60" r="7" fill="none" stroke="#3CB043" stroke-width="2"/>
+    </svg>
+  </div>
+</div>
+
+<script>
+(function(){
+  var groups={pilier:'tout',pays:'tout',annee:'tout'};
+  var chips=document.querySelectorAll('.chipbtn');
+  if(!chips.length) return;
+  chips.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var g=btn.getAttribute('data-group'), v=btn.getAttribute('data-value');
+      groups[g]=v;
+      document.querySelectorAll('.chipbtn[data-group="'+g+'"]').forEach(function(b){
+        b.classList.toggle('active', b===btn);
+      });
+      apply();
+    });
+  });
+  function apply(){
+    var vis=0;
+    document.querySelectorAll('.terr-card').forEach(function(c){
+      var ok=(groups.pilier==='tout'||c.getAttribute('data-pilier')===groups.pilier)
+           &&(groups.pays==='tout'||c.getAttribute('data-pays')===groups.pays)
+           &&(groups.annee==='tout'||c.getAttribute('data-annee')===groups.annee);
+      c.style.display=ok?'':'none'; if(ok)vis++;
+    });
+    var nr=document.querySelector('.no-result'); if(nr) nr.style.display=vis?'none':'block';
+  }
+})();
+</script>
