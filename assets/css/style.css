@@ -29,7 +29,7 @@ p{margin:0} a{color:inherit;text-decoration:none} img{max-width:100%}
 
 /* header */
 header.site{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:74px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px;padding-top:8px;padding-bottom:8px}
 .brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--ink)}
 .brand img{height:46px;width:46px;object-fit:contain;display:block}
 .brand small{display:block;font-family:'Montserrat';font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
@@ -267,6 +267,12 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
 /* responsive */
 @media(max-width:860px){
   .menu{display:none} .burger{display:block}
+  .nav .btn-don{display:none}
+  .brand{font-size:16px;gap:10px}
+  .brand img{height:40px;width:40px}
+  .brand span{white-space:nowrap;line-height:1.1}
+  .brand small{font-size:10px;letter-spacing:.12em;white-space:nowrap}
+  .mobile-menu .mm-don{margin:12px 24px;text-align:center;background:var(--red);color:#fff;border-radius:999px;border-bottom:0;font-weight:600}
   .grid3,.grid4,.steps,.pgrid,.kpis,.gov,.mv .two,.support-grid,.contact-grid,.posts,.fgrid{grid-template-columns:1fr;gap:18px}
   .prog .row{grid-template-columns:1fr;gap:22px}
   .bridge{grid-template-columns:1fr;gap:22px}
@@ -408,3 +414,10 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
 .back-hub:hover{color:var(--ink)}
 @media(max-width:860px){.equip-grid{grid-template-columns:1fr}}
 @media(min-width:601px) and (max-width:860px){.equip-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== contact : bloc WhatsApp direct ===== */
+.wa-hero{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;background:linear-gradient(135deg,#eff9f1,#e8f5ea);border:1px solid #d5ebd8;border-radius:16px;padding:28px 32px;margin-bottom:42px}
+.wa-hero h2{font-size:1.5rem;margin:6px 0 8px}
+.wa-hero p{color:var(--ink-soft);font-size:14.5px;max-width:54ch;margin:0}
+.wa-hero .btn{white-space:nowrap}
+@media(max-width:720px){.wa-hero{flex-direction:column;align-items:flex-start}}
