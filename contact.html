@@ -1,0 +1,67 @@
+---
+layout: default
+active: contact
+title: "Contact"
+description: "Contactez Les Architectes de la Réussite — directement, 24/7. Siège à Courbevoie (92)."
+permalink: /contact/
+---
+
+<section class="hero img" style="min-height:auto">
+  <div class="bg" style="background-image:url('{{ '/assets/img/hero-contact.jpg' | relative_url }}')"></div>
+  <div class="scrim"></div>
+  <div class="wrap" style="padding:82px 24px">
+    <div class="hero-grid">
+      <span class="eyebrow" style="color:var(--gold)">Contact</span>
+      <h1>Parlons-en.</h1>
+      <p class="lead">Une question, une envie de soutenir, un projet de partenariat ? Écrivez-nous.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="wa-hero">
+      <div>
+        <span class="eyebrow" style="color:var(--green-deep)">Le plus rapide</span>
+        <h2>Contactez-nous directement, 24/7</h2>
+        <p>C'est le moyen le plus simple et le plus rapide de nous joindre : une question, un don en nature, une envie de nous rejoindre — on vous répond au plus vite.</p>
+      </div>
+      <a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20vous%20contacte%20au%20sujet%20de%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa">Contactez-nous directement, 24/7</a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="rich">
+        <h2>Nos coordonnées</h2>
+        <p><strong>Les Architectes de la Réussite</strong><br>Association loi 1901<br>{{ site.org.address }}</p>
+        <p>
+          {% if site.org.email != "" %}<strong>E-mail :</strong> <a href="mailto:{{ site.org.email }}" style="color:var(--green-deep)">{{ site.org.email }}</a><br>{% else %}<strong>E-mail :</strong> en cours d'activation<br>{% endif %}
+          {% if site.org.linkedin != "" %}<strong>LinkedIn :</strong> <a href="{{ site.org.linkedin }}" style="color:var(--green-deep)">notre page</a>{% endif %}
+        </p>
+        <div class="note-box"><strong>Dons en nature &amp; matériel informatique :</strong> précisez-nous la nature et le volume, nous organisons la suite avec vous.</div>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Playfair Display';font-size:1.7rem;margin-bottom:6px">Ou laissez-nous un message</h2>
+        <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px">Nous revenons vers vous par e-mail.</p>
+        {% if site.org.formspree != "" %}
+        <form action="{{ site.org.formspree }}" method="POST">
+        {% else %}
+        <form action="#" method="POST" onsubmit="alert('Formulaire à activer (Formspree) — voir README.'); return false;">
+        {% endif %}
+          <div class="field"><label for="nom">Nom</label><input id="nom" type="text" name="nom" required></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" type="email" name="email" required></div>
+          <div class="field"><label for="sujet">Sujet</label><input id="sujet" type="text" name="sujet"></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <label class="consent" style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);margin-bottom:16px">
+            <input type="checkbox" required style="margin-top:3px">
+            <span>J'accepte que mes données soient utilisées pour répondre à ma demande, conformément à la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</span>
+          </label>
+          <button class="btn btn-solid" type="submit">Envoyer</button>
+        </form>
+        {% if site.org.formspree == "" %}
+        <p style="font-size:12.5px;font-style:italic;color:var(--ink-soft);margin-top:12px">Formulaire prêt — il s'activera dès la mise en service de l'adresse de réception. En attendant, écrivez-nous directement (bouton ci-dessus).</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
