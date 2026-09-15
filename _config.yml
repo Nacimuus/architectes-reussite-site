@@ -16,7 +16,7 @@ baseurl: ""
 # --- Coordonnées association ---
 org:
   address: "36 rue Baudin, 92400 Courbevoie, France"
-  email: ""          # à renseigner en Phase 0 (email officiel)
+  email: "contact@lesarchitectesdelareussite.com"
   rna: ""            # à compléter dès réception du récépissé
   linkedin: ""       # à renseigner
   helloasso: ""      # URL de la campagne HelloAsso (Phase 0)
