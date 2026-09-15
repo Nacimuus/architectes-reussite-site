@@ -7,8 +7,8 @@ lang: fr
 
 # --- URL ---
 # Pour un site de projet GitHub Pages (nacimuus.github.io/architectes-reussite-site) :
-url: "https://nacimuus.github.io"
-baseurl: "/architectes-reussite-site"
+url: "https://lesarchitectesdelareussite.com"
+baseurl: ""
 # Quand le nom de domaine personnalisé sera branché, remplacez par :
 #   url: "https://votre-domaine.org"
 #   baseurl: ""
