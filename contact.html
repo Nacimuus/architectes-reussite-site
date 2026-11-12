@@ -2,7 +2,7 @@
 layout: default
 active: contact
 title: "Contact"
-description: "Contactez Les Architectes de la Réussite — directement, 24/7. Siège à Courbevoie (92)."
+description: "Contactez Les Architectes de la Réussite, directement, 24/7. Siège à Courbevoie (92)."
 permalink: /contact/
 ---
 
@@ -24,7 +24,7 @@ permalink: /contact/
       <div>
         <span class="eyebrow" style="color:var(--green-deep)">Le plus rapide</span>
         <h2>Contactez-nous directement, 24/7</h2>
-        <p>C'est le moyen le plus simple et le plus rapide de nous joindre : une question, un don en nature, une envie de nous rejoindre — on vous répond au plus vite.</p>
+        <p>C'est le moyen le plus simple et le plus rapide de nous joindre : une question, un don en nature, une envie de nous rejoindre, on vous répond au plus vite.</p>
       </div>
       <a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20vous%20contacte%20au%20sujet%20de%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa">Contactez-nous directement, 24/7</a>
     </div>
@@ -46,7 +46,7 @@ permalink: /contact/
         {% if site.org.formspree != "" %}
         <form action="{{ site.org.formspree }}" method="POST">
         {% else %}
-        <form action="#" method="POST" onsubmit="alert('Formulaire à activer (Formspree) — voir README.'); return false;">
+        <form action="#" method="POST" onsubmit="alert('Formulaire à activer (Formspree), voir README.'); return false;">
         {% endif %}
           <div class="field"><label for="nom">Nom</label><input id="nom" type="text" name="nom" required></div>
           <div class="field"><label for="email">E-mail</label><input id="email" type="email" name="email" required></div>
@@ -59,7 +59,7 @@ permalink: /contact/
           <button class="btn btn-solid" type="submit">Envoyer</button>
         </form>
         {% if site.org.formspree == "" %}
-        <p style="font-size:12.5px;font-style:italic;color:var(--ink-soft);margin-top:12px">Formulaire prêt — il s'activera dès la mise en service de l'adresse de réception. En attendant, écrivez-nous directement (bouton ci-dessus).</p>
+        <p style="font-size:12.5px;font-style:italic;color:var(--ink-soft);margin-top:12px">Formulaire prêt, il s'activera dès la mise en service de l'adresse de réception. En attendant, écrivez-nous directement (bouton ci-dessus).</p>
         {% endif %}
       </div>
     </div>

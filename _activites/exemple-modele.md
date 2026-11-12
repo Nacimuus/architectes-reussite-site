@@ -1,5 +1,5 @@
 ---
-# ===== MODÈLE D'ACTIVITÉ — dupliquez ce fichier pour créer une action =====
+# ===== MODÈLE D'ACTIVITÉ : dupliquez ce fichier pour créer une action =====
 # Ce fichier n'apparaît PAS sur le site (published: false).
 # Pour publier une action : copiez-le, renommez-le, remplissez, et mettez published: true
 published: false

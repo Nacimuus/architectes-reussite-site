@@ -1,4 +1,4 @@
-# Les Architectes de la Réussite — site (Jekyll / GitHub Pages)
+# Les Architectes de la Réussite : site (Jekyll / GitHub Pages)
 
 Site statique construit avec **Jekyll**, prêt pour l'hébergement gratuit **GitHub Pages**.
 Design, en-tête, pied de page et feuille de style sont **mutualisés** : une modification se fait à un seul endroit.
@@ -29,7 +29,7 @@ _posts/                    → articles d'actualité (1 fichier = 1 article)
 3. Le site sera publié sous `https://VOTRE-COMPTE.github.io/architectes-reussite-site/`.
 4. Quand votre **nom de domaine** (~12 €/an) sera prêt : ajoutez-le dans *Settings → Pages*, puis dans `_config.yml` mettez `url` à votre domaine et `baseurl: ""`.
 
-## À configurer (Phase 0) — tout est centralisé dans `_config.yml`
+## À configurer (Phase 0) : tout  est centralisé dans `_config.yml`
 
 | Champ | Rôle |
 |---|---|
