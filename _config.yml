@@ -5,6 +5,20 @@ description: >-
   formation, l'action humanitaire et la solidarité numérique.
 lang: fr
 
+# --- SEO / partage social (jekyll-seo-tag) ---
+logo: /assets/img/logo.png
+author: "Les Architectes de la Réussite"
+twitter:
+  card: summary_large_image
+social:
+  name: "Les Architectes de la Réussite"
+  links: []        # LinkedIn et autres profils ajoutés dès qu'ils existent
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-image.jpg
+
 # --- URL ---
 # Pour un site de projet GitHub Pages (nacimuus.github.io/architectes-reussite-site) :
 url: "https://lesarchitectesdelareussite.com"
@@ -20,7 +34,7 @@ org:
   rna: ""            # à compléter dès réception du récépissé
   linkedin: ""       # à renseigner
   helloasso: ""      # URL de la campagne HelloAsso (Phase 0)
-  formspree: ""      # ex. https://formspree.io/f/xxxxxx (contact + newsletter)
+  formspree: "https://formspree.io/f/xbgojzko"
 
 # --- Build ---
 permalink: pretty

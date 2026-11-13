@@ -3,12 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#13201A">
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% seo %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Les Architectes de la Réussite",
+    "alternateName": "LADR",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "logo": "{{ site.url }}{{ site.baseurl }}/assets/img/logo.png",
+    "image": "{{ site.url }}{{ site.baseurl }}/assets/img/og-image.jpg",
+    "description": "{{ site.description | strip_newlines | strip }}",
+    "slogan": "Former, équiper, transmettre",
+    "foundingDate": "2026",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "36 rue Baudin",
+      "postalCode": "92400",
+      "addressLocality": "Courbevoie",
+      "addressCountry": "FR"
+    },
+    {% if site.org.email != "" %}"email": "{{ site.org.email }}",{% endif %}
+    "areaServed": [
+      { "@type": "Country", "name": "France" },
+      { "@type": "Country", "name": "Algérie" },
+      { "@type": "Place", "name": "Afrique" }
+    ],
+    "knowsAbout": ["Formation des jeunes", "Action humanitaire", "Solidarité numérique", "Accompagnement des orphelinats"]{% if site.org.linkedin != "" %},
+    "sameAs": ["{{ site.org.linkedin }}"]{% endif %}
+  }
+  </script>
 </head>
 <body>
   {% include header.html %}
