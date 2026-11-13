@@ -53,6 +53,29 @@
       var b=document.querySelector('.burger'), m=document.querySelector('.mobile-menu');
       if(b&&m){ b.addEventListener('click',function(){ m.classList.toggle('open'); }); }
     })();
+    // formulaires Formspree : envoi sans quitter la page
+    (function(){
+      if(!window.fetch || !window.FormData) return;
+      document.querySelectorAll('form.js-form').forEach(function(f){
+        f.addEventListener('submit', function(e){
+          e.preventDefault();
+          var st=document.getElementById(f.getAttribute('data-status'));
+          var btn=f.querySelector('[type="submit"]'), label=btn.textContent;
+          btn.disabled=true; btn.textContent='Envoi…';
+          fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+            .then(function(r){
+              if(!r.ok) throw new Error(r.status);
+              f.reset();
+              st.className='form-status ok'; st.textContent=f.getAttribute('data-success');
+            })
+            .catch(function(){
+              st.className='form-status err';
+              st.textContent="L'envoi n'a pas abouti. Réessayez dans un instant, ou écrivez-nous à {{ site.org.email }}.";
+            })
+            .then(function(){ st.hidden=false; btn.disabled=false; btn.textContent=label; });
+        });
+      });
+    })();
   </script>
 </body>
 </html>

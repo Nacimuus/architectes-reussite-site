@@ -421,3 +421,10 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
 .wa-hero p{color:var(--ink-soft);font-size:14.5px;max-width:54ch;margin:0}
 .wa-hero .btn{white-space:nowrap}
 @media(max-width:720px){.wa-hero{flex-direction:column;align-items:flex-start}}
+
+/* ===== formulaires : message de confirmation ===== */
+.form-status{margin-top:14px;padding:12px 16px;border-radius:12px;font-size:14px;font-weight:600;line-height:1.5;text-align:left}
+.form-status.ok{background:#EAF6EC;color:var(--green-deep);border:1px solid #CFE8D3}
+.form-status.err{background:#FFF0EC;color:var(--red-deep);border:1px solid #FFD2C7}
+.news .form-status{text-align:center}
+button[disabled]{opacity:.6;cursor:wait}

@@ -44,7 +44,8 @@ permalink: /contact/
         <h2 style="font-family:'Playfair Display';font-size:1.7rem;margin-bottom:6px">Ou laissez-nous un message</h2>
         <p style="color:var(--ink-soft);font-size:14px;margin-bottom:16px">Nous revenons vers vous par e-mail.</p>
         {% if site.org.formspree != "" %}
-        <form action="{{ site.org.formspree }}" method="POST">
+        <form action="{{ site.org.formspree }}" method="POST" class="js-form" data-status="contact-status" data-success="Merci, votre message a bien été envoyé. Nous vous répondons rapidement.">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le site">
         {% else %}
         <form action="#" method="POST" onsubmit="alert('Formulaire à activer (Formspree), voir README.'); return false;">
         {% endif %}
@@ -58,6 +59,7 @@ permalink: /contact/
           </label>
           <button class="btn btn-solid" type="submit">Envoyer</button>
         </form>
+        <p id="contact-status" class="form-status" role="status" aria-live="polite" hidden></p>
         {% if site.org.formspree == "" %}
         <p style="font-size:12.5px;font-style:italic;color:var(--ink-soft);margin-top:12px">Formulaire prêt, il s'activera dès la mise en service de l'adresse de réception. En attendant, écrivez-nous directement (bouton ci-dessus).</p>
         {% endif %}
