@@ -1,0 +1,46 @@
+{% if site.org.ga4 != "" %}
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text" hidden>
+  <p id="cookie-title" class="cb-title">Mesure d'audience</p>
+  <p id="cookie-text">Avec votre accord, nous utilisons Google Analytics pour savoir combien de personnes visitent le site, depuis quel pays et quelles pages les intéressent. Ni publicité, ni revente de données. <a href="{{ '/politique-confidentialite/' | relative_url }}#cookies">En savoir plus</a></p>
+  <div class="cb-actions">
+    <button type="button" class="btn cb-btn" data-consent="denied">Refuser</button>
+    <button type="button" class="btn cb-btn" data-consent="granted">Accepter</button>
+  </div>
+</div>
+<script>
+  // Consentement CNIL : Google Analytics n'est chargé qu'après « Accepter ».
+  (function(){
+    var ID='{{ site.org.ga4 }}', KEY='ladr-consent', MAX=182*24*3600*1000; // choix gardé 6 mois
+    var banner=document.getElementById('cookie-banner');
+    function read(){ try{ var c=JSON.parse(localStorage.getItem(KEY)); if(c && Date.now()-c.t<MAX) return c.v; }catch(e){} return null; }
+    function save(v){ try{ localStorage.setItem(KEY, JSON.stringify({v:v,t:Date.now()})); }catch(e){} }
+    function load(){
+      if(window.gtag) return;
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', ID, { cookie_expires: 33696000, allow_google_signals: false, allow_ad_personalization_signals: false }); // cookies 13 mois max
+      var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(ID);
+      document.head.appendChild(s);
+    }
+    function clearGa(){
+      var parts=location.hostname.split('.'), domains=['', location.hostname, '.'+location.hostname, '.'+parts.slice(-2).join('.')];
+      document.cookie.split(';').forEach(function(c){
+        var n=c.split('=')[0].trim();
+        if(n.indexOf('_ga')===0) domains.forEach(function(d){ document.cookie=n+'=; Max-Age=0; path=/'+(d?'; domain='+d:''); });
+      });
+    }
+    function decide(v){
+      save(v); banner.hidden=true;
+      if(v==='granted') load();
+      else { clearGa(); if(window.gtag) location.reload(); }
+    }
+    banner.querySelectorAll('[data-consent]').forEach(function(b){ b.addEventListener('click', function(){ decide(b.getAttribute('data-consent')); }); });
+    document.querySelectorAll('[data-cookie-settings]').forEach(function(l){
+      l.addEventListener('click', function(e){ e.preventDefault(); banner.hidden=false; banner.querySelector('[data-consent]').focus(); });
+    });
+    var c=read();
+    if(c==='granted') load(); else if(c===null) banner.hidden=false;
+  })();
+</script>
+{% endif %}

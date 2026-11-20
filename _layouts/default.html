@@ -47,6 +47,7 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  {% include cookies.html %}
   <script>
     // menu mobile
     (function(){
@@ -66,6 +67,7 @@
             .then(function(r){
               if(!r.ok) throw new Error(r.status);
               f.reset();
+              if(window.gtag) gtag('event', f.id==='newsletter-form' ? 'sign_up' : 'generate_lead');
               st.className='form-status ok'; st.textContent=f.getAttribute('data-success');
             })
             .catch(function(){

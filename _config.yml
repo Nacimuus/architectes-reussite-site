@@ -32,6 +32,7 @@ org:
   linkedin: ""       # à renseigner
   helloasso: ""      # URL de la campagne HelloAsso (Phase 0)
   formspree: "https://formspree.io/f/xbgojzko"
+  ga4: ""            # identifiant de mesure Google Analytics 4 (G-XXXXXXXXXX)
 
 # --- Build ---
 permalink: pretty

@@ -428,3 +428,15 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
 .form-status.err{background:#FFF0EC;color:var(--red-deep);border:1px solid #FFD2C7}
 .news .form-status{text-align:center}
 button[disabled]{opacity:.6;cursor:wait}
+
+/* ===== bandeau cookies (Google Analytics) ===== */
+.cookie-banner{position:fixed;right:16px;bottom:16px;left:16px;z-index:100;max-width:520px;margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(19,32,26,.18);padding:20px 22px}
+.cookie-banner[hidden]{display:none}
+.cb-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:6px}
+.cookie-banner p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.cookie-banner a{color:var(--green-deep);text-decoration:underline}
+.cb-actions{display:flex;gap:10px;margin-top:14px}
+.cb-btn{flex:1;background:var(--ink);color:#fff;font-size:14px;padding:11px 16px}
+.cb-btn:hover{background:#000}
+.flink{align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:14.5px;line-height:2;color:#C4CEC7;cursor:pointer;text-align:left}
+.flink:hover{color:#fff}

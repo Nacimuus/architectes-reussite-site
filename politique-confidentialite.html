@@ -8,7 +8,7 @@ permalink: /politique-confidentialite/
 <section class="phero"><div class="wrap">
   <span class="eyebrow">Informations</span>
   <h1>Politique de confidentialité</h1>
-  <p class="lead" style="font-size:14px;margin-top:8px">Dernière mise à jour : août 2026</p>
+  <p class="lead" style="font-size:14px;margin-top:8px">Dernière mise à jour : novembre 2026</p>
 </div></section>
 
 <section><div class="wrap">
@@ -22,6 +22,7 @@ permalink: /politique-confidentialite/
       <li>via le <strong>formulaire de contact</strong> : nom, e-mail, message ;</li>
       <li>via l'<strong>inscription à la newsletter</strong> : adresse e-mail ;</li>
       <li>via un <strong>don</strong> : les données nécessaires au traitement du don par notre prestataire de paiement.</li>
+      {% if site.org.ga4 != "" %}<li>avec votre accord, des <strong>statistiques de visite</strong> (voir « Cookies &amp; mesure d'audience » ci-dessous).</li>{% endif %}
     </ul>
 
     <h2>Finalités</h2>
@@ -34,6 +35,14 @@ permalink: /politique-confidentialite/
     <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de portabilité de vos données. Pour l'exercer, contactez-nous {% if site.org.email != "" %}à {{ site.org.email }}{% else %}via notre <a href="{{ '/contact/' | relative_url }}" style="color:var(--green-deep)">page Contact</a>{% endif %}. Vous pouvez également saisir la CNIL.</p>
 
     <h2>Hébergement &amp; sous-traitants</h2>
-    <p>Le site est hébergé par GitHub Pages. Les formulaires et la collecte de dons peuvent s'appuyer sur des prestataires (par exemple Formspree pour les formulaires, HelloAsso pour les dons), qui traitent les données pour notre compte.</p>
+    <p>Le site est hébergé par GitHub Pages. Les formulaires et la collecte de dons peuvent s'appuyer sur des prestataires (par exemple Formspree pour les formulaires, HelloAsso pour les dons{% if site.org.ga4 != "" %}, Google pour la mesure d'audience{% endif %}), qui traitent les données pour notre compte.</p>
+
+    {% if site.org.ga4 != "" %}
+    <h2 id="cookies">Cookies &amp; mesure d'audience</h2>
+    <p>Avec votre accord uniquement, nous utilisons <strong>Google Analytics 4</strong> (Google Ireland Limited) pour mesurer la fréquentation du site : nombre de visites, pages consultées, pays et type d'appareil, sites d'où viennent les visiteurs. Ces statistiques servent seulement à améliorer le site. Elles ne servent ni à la publicité ni au profilage : les signaux publicitaires de Google sont désactivés.</p>
+    <p>Aucun cookie de mesure n'est déposé tant que vous n'avez pas cliqué sur « Accepter ». Les cookies Google Analytics (<code>_ga</code>, <code>_ga_*</code>) sont conservés 13 mois au maximum. Votre choix, accord ou refus, est mémorisé 6 mois dans votre navigateur.</p>
+    <p>Les données peuvent être transférées aux États-Unis, vers Google LLC, certifiée au titre du cadre de protection des données UE–États-Unis (Data Privacy Framework).</p>
+    <p>Vous pouvez changer d'avis à tout moment grâce au lien « Gestion des cookies » en bas de chaque page. En cas de refus, les cookies Google Analytics sont supprimés.</p>
+    {% endif %}
   </div>
 </div></section>
