@@ -1,17 +1,36 @@
 {% if site.org.ga4 != "" %}
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text" hidden>
-  <p id="cookie-title" class="cb-title">Mesure d'audience</p>
-  <p id="cookie-text">Avec votre accord, nous utilisons Google Analytics pour savoir combien de personnes visitent le site, depuis quel pays et quelles pages les intéressent. Ni publicité, ni revente de données. <a href="{{ '/politique-confidentialite/' | relative_url }}#cookies">En savoir plus</a></p>
-  <div class="cb-actions">
-    <button type="button" class="btn cb-btn" data-consent="denied">Refuser</button>
-    <button type="button" class="btn cb-btn" data-consent="granted">Accepter</button>
+  <div class="cb-head">
+    <span class="cb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.6A9 9 0 1 1 11.4 3a3.2 3.2 0 0 0 4 3.9 3.2 3.2 0 0 0 3.7 4.2 3 3 0 0 0 1.9 1.5z"/><circle cx="8.5" cy="9.5" r=".9" fill="currentColor"/><circle cx="15" cy="15.5" r=".9" fill="currentColor"/><circle cx="9" cy="15" r=".9" fill="currentColor"/><circle cx="12.5" cy="11.5" r=".6" fill="currentColor"/></svg></span>
+    <p id="cookie-title" class="cb-title">Ce site utilise des cookies</p>
   </div>
+  <p id="cookie-text" class="cb-text">Nous souhaitons déposer des cookies de mesure d'audience pour savoir combien de personnes visitent le site et quelles pages les intéressent. Ils ne sont déposés qu'avec votre accord. <a href="{{ '/politique-confidentialite/' | relative_url }}#cookies">En savoir plus</a></p>
+
+  <div class="cb-prefs" hidden>
+    <div class="cb-row">
+      <div><strong>Cookies nécessaires</strong><span>Mémorisent vos choix sur ce bandeau.</span></div>
+      <span class="cb-always">Toujours actifs</span>
+    </div>
+    <label class="cb-row" for="cb-analytics">
+      <div><strong>Mesure d'audience</strong><span>Google Analytics : visites, pages consultées, pays. Ni publicité, ni revente de données.</span></div>
+      <input type="checkbox" id="cb-analytics" class="cb-switch">
+    </label>
+  </div>
+
+  <div class="cb-actions">
+    <button type="button" class="cb-btn" data-consent="denied">Tout refuser</button>
+    <button type="button" class="cb-btn" data-consent="granted">Tout accepter</button>
+  </div>
+  <button type="button" class="cb-link" data-cb-customize>Personnaliser mes choix</button>
+  <button type="button" class="cb-btn cb-save" data-cb-save hidden>Enregistrer mes choix</button>
 </div>
 <script>
-  // Consentement CNIL : Google Analytics n'est chargé qu'après « Accepter ».
+  // Consentement CNIL : Google Analytics n'est chargé qu'après accord.
   (function(){
     var ID='{{ site.org.ga4 }}', KEY='ladr-consent', MAX=182*24*3600*1000; // choix gardé 6 mois
-    var banner=document.getElementById('cookie-banner');
+    var banner=document.getElementById('cookie-banner'), prefs=banner.querySelector('.cb-prefs'),
+        box=document.getElementById('cb-analytics'), custom=banner.querySelector('[data-cb-customize]'),
+        saveBtn=banner.querySelector('[data-cb-save]');
     function read(){ try{ var c=JSON.parse(localStorage.getItem(KEY)); if(c && Date.now()-c.t<MAX) return c.v; }catch(e){} return null; }
     function save(v){ try{ localStorage.setItem(KEY, JSON.stringify({v:v,t:Date.now()})); }catch(e){} }
     function load(){
@@ -30,17 +49,24 @@
         if(n.indexOf('_ga')===0) domains.forEach(function(d){ document.cookie=n+'=; Max-Age=0; path=/'+(d?'; domain='+d:''); });
       });
     }
+    function showBanner(withPrefs){
+      banner.hidden=false;
+      prefs.hidden=!withPrefs; custom.hidden=!!withPrefs; saveBtn.hidden=!withPrefs;
+      if(withPrefs) box.checked = read()==='granted';
+    }
     function decide(v){
       save(v); banner.hidden=true;
       if(v==='granted') load();
       else { clearGa(); if(window.gtag) location.reload(); }
     }
     banner.querySelectorAll('[data-consent]').forEach(function(b){ b.addEventListener('click', function(){ decide(b.getAttribute('data-consent')); }); });
+    custom.addEventListener('click', function(){ showBanner(true); box.focus(); });
+    saveBtn.addEventListener('click', function(){ decide(box.checked ? 'granted' : 'denied'); });
     document.querySelectorAll('[data-cookie-settings]').forEach(function(l){
-      l.addEventListener('click', function(e){ e.preventDefault(); banner.hidden=false; banner.querySelector('[data-consent]').focus(); });
+      l.addEventListener('click', function(e){ e.preventDefault(); showBanner(true); box.focus(); });
     });
     var c=read();
-    if(c==='granted') load(); else if(c===null) banner.hidden=false;
+    if(c==='granted') load(); else if(c===null) showBanner(false);
   })();
 </script>
 {% endif %}
