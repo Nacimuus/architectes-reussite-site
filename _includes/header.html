@@ -13,7 +13,7 @@
       <a href="{{ '/soutenir/' | relative_url }}" {% if a == 'soutenir' %}aria-current="page"{% endif %}>S'engager</a>
       <a href="{{ '/contact/' | relative_url }}" {% if a == 'contact' %}aria-current="page"{% endif %}>Contact</a>
     </nav>
-    <a href="{{ '/soutenir/' | relative_url }}" class="btn btn-don">Faire un don</a>
+    <a href="{% if site.org.helloasso != "" %}{{ '/soutenir/' | relative_url }}{% else %}{{ '/promesse-de-don/' | relative_url }}{% endif %}" class="btn btn-don">Faire un don</a>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <nav class="mobile-menu" aria-label="Navigation mobile">
@@ -23,6 +23,6 @@
     <a href="{{ '/actualites/' | relative_url }}">Le terrain</a>
     <a href="{{ '/soutenir/' | relative_url }}">S'engager</a>
     <a href="{{ '/contact/' | relative_url }}">Contact</a>
-    <a class="mm-don" href="{{ '/soutenir/' | relative_url }}">Faire un don</a>
+    <a class="mm-don" href="{% if site.org.helloasso != "" %}{{ '/soutenir/' | relative_url }}{% else %}{{ '/promesse-de-don/' | relative_url }}{% endif %}">Faire un don</a>
   </nav>
 </header>

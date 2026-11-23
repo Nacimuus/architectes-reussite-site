@@ -1,0 +1,222 @@
+---
+layout: default
+active: soutenir
+title: "Promesse de don"
+description: "Engagez-vous dès aujourd'hui pour Les Architectes de la Réussite : choisissez un montant et un mode de règlement, nous revenons vers vous."
+permalink: /promesse-de-don/
+---
+
+<section class="phero">
+  <svg class="arcs" viewBox="0 0 1000 700" aria-hidden="true" fill="none"><g>
+    <circle cx="500" cy="700" r="210" stroke="var(--red)" stroke-width="12" opacity=".14"/>
+    <circle cx="500" cy="700" r="290" stroke="var(--gold)" stroke-width="12" opacity=".14"/>
+    <circle cx="500" cy="700" r="370" stroke="var(--green)" stroke-width="12" opacity=".09"/>
+  </g></svg>
+  <div class="wrap">
+    <div class="crumb"><a href="{{ '/soutenir/' | relative_url }}">S'engager</a> · Promesse de don</div>
+    <h1>Promesse de don</h1>
+    <p class="lead">Engagez-vous dès aujourd'hui, réglez ensuite selon le mode qui vous convient. Votre promesse nous permet de préparer nos prochaines actions sur le terrain.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pledge-wrap">
+
+      <div>
+        <form id="pledge-form" class="pledge-card" action="{{ site.org.formspree }}" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle promesse de don">
+          <input type="hidden" name="type" value="Promesse de don">
+          <input type="hidden" name="reference" value="">
+
+          <fieldset>
+            <legend>Votre promesse <span class="req" aria-hidden="true">*</span></legend>
+            <div class="amounts" role="group" aria-label="Montants suggérés">
+              <button type="button" class="amount-chip" data-amount="10" aria-pressed="false">10 €</button>
+              <button type="button" class="amount-chip" data-amount="25" aria-pressed="false">25 €</button>
+              <button type="button" class="amount-chip" data-amount="50" aria-pressed="false">50 €</button>
+              <button type="button" class="amount-chip" data-amount="100" aria-pressed="false">100 €</button>
+            </div>
+            <div class="field amount-free">
+              <label for="pl-montant">Ou le montant de votre choix</label>
+              <input id="pl-montant" type="number" name="montant" min="1" step="1" inputmode="numeric" placeholder="Montant" required>
+              <span aria-hidden="true">€</span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Calendrier</legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="calendrier" value="Don en une fois" checked><span>En une fois</span></label>
+              <label class="choice"><input type="radio" name="calendrier" value="Don échelonné"><span>Je souhaite échelonner mon don</span></label>
+            </div>
+            <div class="field reveal" id="pl-echeancier-box" hidden>
+              <label for="pl-echeancier">Précisez l'échéancier souhaité</label>
+              <textarea id="pl-echeancier" name="echeancier" rows="2" placeholder="Par exemple : 25 € par mois pendant 4 mois"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Vous êtes</legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="donateur" value="Particulier" checked><span>Un particulier</span></label>
+              <label class="choice"><input type="radio" name="donateur" value="Entreprise"><span>Une entreprise</span></label>
+            </div>
+            <div class="field reveal" id="pl-entreprise-box" hidden>
+              <label for="pl-entreprise">Nom de l'entreprise <span class="req" aria-hidden="true">*</span></label>
+              <input id="pl-entreprise" type="text" name="entreprise" autocomplete="organization">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Vos coordonnées</legend>
+            <div class="field"><label for="pl-nom">Prénom et nom <span class="req" aria-hidden="true">*</span></label><input id="pl-nom" type="text" name="nom" autocomplete="name" required></div>
+            <div class="field"><label for="pl-email">E-mail <span class="req" aria-hidden="true">*</span></label><input id="pl-email" type="email" name="email" autocomplete="email" required></div>
+            <div class="field"><label for="pl-tel">Téléphone (facultatif)</label><input id="pl-tel" type="tel" name="telephone" autocomplete="tel"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Mode de règlement <span class="req" aria-hidden="true">*</span></legend>
+            <div class="pay-grid">
+              <label class="pay"><input type="radio" name="reglement" value="Virement" required><span class="box"><strong>Virement</strong><small>Nous vous envoyons le RIB de l'association par e-mail.</small></span></label>
+              <label class="pay"><input type="radio" name="reglement" value="Chèque"><span class="box"><strong>Chèque</strong><small>À l'ordre de « Les Architectes de la Réussite ».</small></span></label>
+              <label class="pay"><input type="radio" name="reglement" value="Espèces"><span class="box"><strong>Espèces</strong><small>Remise en main propre à un membre du bureau, contre reçu.</small></span></label>
+              <label class="pay"><input type="radio" name="reglement" value="Carte bancaire"><span class="box"><strong>Carte bancaire</strong><small>{% if site.org.helloasso != "" %}Paiement sécurisé sur HelloAsso.{% else %}Lien de paiement HelloAsso envoyé dès son ouverture.{% endif %}</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Ce que vous souhaitez soutenir</legend>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="affectation" value="Là où le besoin est le plus grand" checked><span>Là où le besoin est le plus grand</span></label>
+              <label class="choice"><input type="radio" name="affectation" value="Académie"><span>Académie</span></label>
+              <label class="choice"><input type="radio" name="affectation" value="Actions humanitaires"><span>Actions humanitaires</span></label>
+              <label class="choice"><input type="radio" name="affectation" value="Solidarité numérique"><span>Solidarité numérique</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Un mot pour l'équipe</legend>
+            <div class="field"><label for="pl-message" class="sr-only">Votre message (facultatif)</label><textarea id="pl-message" name="message" rows="3" placeholder="Facultatif"></textarea></div>
+          </fieldset>
+
+          <label class="consent" style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);margin-bottom:18px">
+            <input type="checkbox" required style="margin-top:3px">
+            <span>J'accepte que mes coordonnées soient utilisées uniquement pour le suivi de ma promesse de don, conformément à la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</span>
+          </label>
+          <button class="btn btn-don pledge-submit" type="submit">Valider ma promesse</button>
+          <p id="pledge-status" class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+
+        <div id="pledge-recap" class="recap" hidden>
+          <div class="print-only print-head">
+            <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="" width="56" height="56">
+            <div><strong>Les Architectes de la Réussite</strong><br>Association loi 1901 · {{ site.org.address }}<br>{{ site.org.email }}</div>
+          </div>
+          <span class="eyebrow" style="color:var(--green-deep)">Promesse enregistrée</span>
+          <h2 id="pledge-recap-title" tabindex="-1">Merci, votre promesse est bien enregistrée.</h2>
+          <dl>
+            <dt>Référence</dt><dd data-recap="reference"></dd>
+            <dt>Date</dt><dd data-recap="date"></dd>
+            <dt>Donateur</dt><dd data-recap="donateur"></dd>
+            <dt>Montant</dt><dd data-recap="montant"></dd>
+            <dt>Calendrier</dt><dd data-recap="calendrier"></dd>
+            <dt>Règlement</dt><dd data-recap="reglement"></dd>
+            <dt>Affectation</dt><dd data-recap="affectation"></dd>
+          </dl>
+          <p class="next" data-recap="next"></p>
+          <p class="legal">Ce document récapitule votre engagement ; ce n'est pas un reçu fiscal. L'association a déposé sa demande de rescrit fiscal mécénat : tant qu'il n'est pas obtenu, nous ne pouvons pas délivrer de reçu ouvrant droit à réduction d'impôt.</p>
+          <div class="recap-actions">
+            <button type="button" class="btn btn-solid" id="pl-print">Télécharger ma promesse (PDF)</button>
+            {% if site.org.helloasso != "" %}<a class="btn btn-don" id="pl-helloasso" href="{{ site.org.helloasso }}" hidden>Régler maintenant sur HelloAsso</a>{% endif %}
+            <button type="button" class="btn btn-ghost" id="pl-again">Faire une autre promesse</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="pledge-aside">
+        <h2 class="pledge-aside-title">Comment ça marche</h2>
+        <ol class="pledge-steps">
+          <li><strong>Vous promettez</strong><span>En une minute, sans paiement immédiat.</span></li>
+          <li><strong>Nous vous recontactons</strong><span>Par e-mail, pour le règlement selon le mode choisi.</span></li>
+          <li><strong>Votre don part sur le terrain</strong><span>Chaque euro est tracé et nos comptes sont présentés chaque année en Assemblée générale.</span></li>
+        </ol>
+        {% if site.org.helloasso == "" %}
+        <div class="note-box"><strong>En toute transparence :</strong> notre compte bancaire et notre paiement en ligne sont en cours d'ouverture. Votre promesse est enregistrée dès maintenant ; nous vous écrivons dès que le règlement est possible.</div>
+        {% endif %}
+        <p class="pledge-aside-alt">Vous préférez donner du matériel ? <a href="{{ '/soutenir/' | relative_url }}">Voir les dons en nature</a></p>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Promesse de don : montants, champs conditionnels, envoi Formspree et récapitulatif imprimable.
+  (function(){
+    var f=document.getElementById('pledge-form'), recap=document.getElementById('pledge-recap');
+    if(!f || !window.fetch || !window.FormData) return;
+    var amount=document.getElementById('pl-montant'), chips=f.querySelectorAll('.amount-chip'),
+        status=document.getElementById('pledge-status'), btn=f.querySelector('[type="submit"]'), updaters=[];
+    function eur(n){ return Number(n).toLocaleString('fr-FR',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:2}); }
+    function syncChips(){ chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.getAttribute('data-amount')===amount.value)); }); }
+    chips.forEach(function(c){ c.addEventListener('click', function(){ amount.value=c.getAttribute('data-amount'); syncChips(); }); });
+    amount.addEventListener('input', syncChips);
+    function reveal(name, value, boxId){
+      var box=document.getElementById(boxId), field=box.querySelector('input,textarea');
+      function upd(){ var on=f.querySelector('input[name="'+name+'"]:checked').value===value; box.hidden=!on; field.required=on; if(!on) field.value=''; }
+      f.querySelectorAll('input[name="'+name+'"]').forEach(function(r){ r.addEventListener('change', upd); });
+      updaters.push(upd); upd();
+    }
+    reveal('donateur','Entreprise','pl-entreprise-box');
+    reveal('calendrier','Don échelonné','pl-echeancier-box');
+    function val(n){ var el=f.querySelector('[name="'+n+'"]:checked') || f.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; }
+    var nextSteps={
+      'Virement':"Nous vous envoyons par e-mail le RIB de l'association. Indiquez la référence {ref} dans le libellé de votre virement.",
+      'Chèque':"Libellez votre chèque à l'ordre de « Les Architectes de la Réussite » et notez la référence {ref} au dos. Nous vous confirmons par e-mail où l'envoyer ou le remettre.",
+      'Espèces':"Un membre du bureau vous contacte pour convenir de la remise, contre un reçu signé mentionnant la référence {ref}.",
+      'Carte bancaire':{% if site.org.helloasso != "" %}"Vous pouvez régler dès maintenant sur notre page HelloAsso sécurisée, avec le bouton ci-dessous."{% else %}"Nous vous envoyons par e-mail un lien de paiement sécurisé HelloAsso dès son ouverture."{% endif %}
+    };
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var d=new Date(), pad=function(n){ return (n<10?'0':'')+n; };
+      var ref='LADR-'+String(d.getFullYear()).slice(2)+pad(d.getMonth()+1)+pad(d.getDate())+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+      var m=Number(amount.value);
+      f.querySelector('[name="reference"]').value=ref;
+      f.querySelector('[name="_subject"]').value='Nouvelle promesse de don : '+eur(m)+' ('+ref+')';
+      var label=btn.textContent; btn.disabled=true; btn.textContent='Envoi…'; status.hidden=true;
+      fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+        .then(function(r){
+          if(!r.ok) throw new Error(r.status);
+          var cal=val('calendrier'), ech=val('echeancier'), don=val('donateur'), ent=val('entreprise'), mode=val('reglement');
+          var data={
+            reference:ref,
+            date:d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}),
+            donateur:val('nom')+(don==='Entreprise' && ent ? ' ('+ent+')' : ''),
+            montant:eur(m),
+            calendrier:cal+(cal==='Don échelonné' && ech ? ' : '+ech : ''),
+            reglement:mode,
+            affectation:val('affectation'),
+            next:(nextSteps[mode]||'').replace('{ref}',ref)
+          };
+          recap.querySelectorAll('[data-recap]').forEach(function(el){ el.textContent=data[el.getAttribute('data-recap')]||''; });
+          var ha=document.getElementById('pl-helloasso'); if(ha) ha.hidden = mode!=='Carte bancaire';
+          if(window.gtag) gtag('event','promesse_don',{value:m,currency:'EUR',payment_type:mode});
+          f.hidden=true; recap.hidden=false;
+          var t=document.getElementById('pledge-recap-title'); t.focus({preventScroll:true});
+          recap.scrollIntoView({behavior:'smooth',block:'start'});
+        })
+        .catch(function(){
+          status.className='form-status err'; status.hidden=false;
+          status.textContent="L'envoi n'a pas abouti. Réessayez dans un instant, ou écrivez-nous à {{ site.org.email }}.";
+        })
+        .then(function(){ btn.disabled=false; btn.textContent=label; });
+    });
+    document.getElementById('pl-print').addEventListener('click', function(){ window.print(); });
+    document.getElementById('pl-again').addEventListener('click', function(){
+      f.reset(); syncChips(); updaters.forEach(function(u){ u(); });
+      recap.hidden=true; f.hidden=false; status.hidden=true;
+      f.scrollIntoView({behavior:'smooth',block:'start'}); amount.focus({preventScroll:true});
+    });
+  })();
+</script>
