@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Page introuvable"
+description: "Cette page n'existe pas ou a été déplacée."
+permalink: /404.html
+sitemap: false
+---
+
+<section class="phero">
+  <svg class="arcs" viewBox="0 0 1000 700" aria-hidden="true" fill="none"><g>
+    <circle cx="500" cy="700" r="210" stroke="var(--green)" stroke-width="12" opacity=".16"/>
+    <circle cx="500" cy="700" r="290" stroke="var(--gold)" stroke-width="12" opacity=".14"/>
+    <circle cx="500" cy="700" r="370" stroke="var(--blue)" stroke-width="12" opacity=".10"/>
+  </g></svg>
+  <div class="wrap">
+    <span class="eyebrow">Erreur 404</span>
+    <h1>Ce pont ne mène nulle part.</h1>
+    <p class="lead">La page que vous cherchez n'existe pas ou a été déplacée. Voici par où reprendre le chemin.</p>
+    <div class="cta" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
+      <a href="{{ '/' | relative_url }}" class="btn btn-solid">Retour à l'accueil</a>
+      <a href="{{ '/programmes/' | relative_url }}" class="btn btn-ghost">Nos piliers</a>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Nous contacter</a>
+    </div>
+  </div>
+</section>
