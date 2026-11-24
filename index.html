@@ -144,7 +144,7 @@ permalink: /
       <input type="email" name="email" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail" required>
       <button class="btn btn-solid" type="submit">S'inscrire</button>
     </form>
-    <label class="consent"><input type="checkbox" form="newsletter-form" required> J'accepte de recevoir la newsletter et la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</label>
+    <label class="consent"><input type="checkbox" name="consentement" form="newsletter-form" value="Oui : réception de la newsletter (politique de confidentialité, version novembre 2026)" required> J'accepte de recevoir la newsletter et la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</label>
     <p id="newsletter-status" class="form-status" role="status" aria-live="polite" hidden></p>
   </div></div>
 </section>

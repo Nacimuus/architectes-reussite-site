@@ -101,7 +101,7 @@ permalink: /promesse-de-don/
           </fieldset>
 
           <label class="consent" style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);margin-bottom:18px">
-            <input type="checkbox" required style="margin-top:3px">
+            <input type="checkbox" name="consentement" value="Oui : utilisation de mes coordonnées pour le suivi de ma promesse de don (politique de confidentialité, version novembre 2026)" required style="margin-top:3px">
             <span>J'accepte que mes coordonnées soient utilisées uniquement pour le suivi de ma promesse de don, conformément à la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</span>
           </label>
           <button class="btn btn-don pledge-submit" type="submit">Valider ma promesse</button>
@@ -201,7 +201,7 @@ permalink: /promesse-de-don/
           };
           recap.querySelectorAll('[data-recap]').forEach(function(el){ el.textContent=data[el.getAttribute('data-recap')]||''; });
           var ha=document.getElementById('pl-helloasso'); if(ha) ha.hidden = mode!=='Carte bancaire';
-          if(window.gtag) gtag('event','promesse_don',{value:m,currency:'EUR',payment_type:mode});
+          if(window.gtag) gtag('event','promesse_don',{montant_promis:m,mode_reglement:mode}); // promesse, pas un don encaissé
           f.hidden=true; recap.hidden=false;
           var t=document.getElementById('pledge-recap-title'); t.focus({preventScroll:true});
           recap.scrollIntoView({behavior:'smooth',block:'start'});

@@ -1,3 +1,8 @@
+/* ===== polices hébergées sur le site (licence SIL OFL, voir assets/fonts) ===== */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 700;font-display:swap;src:url('../fonts/montserrat.woff2') format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:500 700;font-display:swap;src:url('../fonts/playfair-display.woff2') format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:500;font-display:swap;src:url('../fonts/playfair-display-italic.woff2') format('woff2')}
+
 /* =====================================================================
    Les Architectes de la Réussite — feuille de style unique
    Direction visuelle dérivée du logo (arcs, colonnade, collines de couleur)
@@ -8,7 +13,7 @@
   --green:#3CB043; --green-deep:#25703A; --green-tint:rgba(60,176,67,.06);
   --gold:#FFD700; --amber:#9C6B00;
   --blue:#0073E6; --blue-soft:#4AA3FF;
-  --red:#FF5733; --red-deep:#E23E1E;
+  --red:#FF5733; --red-deep:#B52E15; --red-btn:#D4361A;
   --maxw:1160px; --r:14px;
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth}
@@ -22,7 +27,7 @@ p{margin:0} a{color:inherit;text-decoration:none} img{max-width:100%}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:14.5px;padding:12px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .2s}
-.btn-don{background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(255,87,51,.28)} .btn-don:hover{background:var(--red-deep);transform:translateY(-1px)}
+.btn-don{background:var(--red-btn);color:#fff;box-shadow:0 6px 18px rgba(255,87,51,.28)} .btn-don:hover{background:var(--red-deep);transform:translateY(-1px)}
 .btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink)} .btn-ghost:hover{background:var(--ink);color:var(--ivory)}
 .btn-solid{background:var(--ink);color:var(--ivory)} .btn-solid:hover{transform:translateY(-1px)}
 .btn-green{background:var(--green-deep);color:#fff} .btn-green:hover{transform:translateY(-1px)}
@@ -272,7 +277,7 @@ footer.site a{color:#C4CEC7;font-size:14.5px;line-height:2} footer.site a:hover{
   .brand img{height:40px;width:40px}
   .brand span{white-space:nowrap;line-height:1.1}
   .brand small{font-size:10px;letter-spacing:.12em;white-space:nowrap}
-  .mobile-menu .mm-don{margin:12px 24px;text-align:center;background:var(--red);color:#fff;border-radius:999px;border-bottom:0;font-weight:600}
+  .mobile-menu .mm-don{margin:12px 24px;text-align:center;background:var(--red-btn);color:#fff;border-radius:999px;border-bottom:0;font-weight:600}
   .grid3,.grid4,.steps,.pgrid,.kpis,.gov,.mv .two,.support-grid,.contact-grid,.posts,.fgrid{grid-template-columns:1fr;gap:18px}
   .prog .row{grid-template-columns:1fr;gap:22px}
   .bridge{grid-template-columns:1fr;gap:22px}

@@ -6,9 +6,8 @@
   <meta name="theme-color" content="#13201A">
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="preload" href="{{ '/assets/fonts/montserrat.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/playfair-display.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% seo %}
   <script type="application/ld+json">
@@ -53,7 +52,10 @@
     // menu mobile
     (function(){
       var b=document.querySelector('.burger'), m=document.querySelector('.mobile-menu');
-      if(b&&m){ b.addEventListener('click',function(){ m.classList.toggle('open'); }); }
+      if(!b||!m) return;
+      function set(open){ m.classList.toggle('open',open); b.setAttribute('aria-expanded',String(open)); b.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu'); }
+      b.addEventListener('click',function(){ set(!m.classList.contains('open')); });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape' && m.classList.contains('open')){ set(false); b.focus(); } });
     })();
     // clics WhatsApp (mesurés seulement si l'internaute a accepté les cookies) :
     // contact avec l'association (lien avec numéro) ou partage d'une action (lien sans numéro)

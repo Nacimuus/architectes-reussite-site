@@ -14,30 +14,38 @@ permalink: /politique-confidentialite/
 <section><div class="wrap">
   <div class="rich">
     <h2>Responsable du traitement</h2>
-    <p>L'association Les Architectes de la Réussite, {{ site.org.address }}, représentée par son Président.</p>
+    <p>L'association Les Architectes de la Réussite, association loi 1901{% if site.org.rna != "" %} (RNA {{ site.org.rna }}){% endif %}, {{ site.org.address }}, représentée par son Président.</p>
 
-    <h2>Données collectées</h2>
-    <p>Nous ne collectons que les données que vous nous transmettez volontairement :</p>
+    <h2>Données collectées, finalités et durées de conservation</h2>
+    <p>Nous ne collectons que les données que vous nous transmettez volontairement, pour un usage précis :</p>
     <ul>
-      <li>via le <strong>formulaire de contact</strong> : nom, e-mail, message ;</li>
-      <li>via l'<strong>inscription à la newsletter</strong> : adresse e-mail ;</li>
-      <li>via le <strong>formulaire bénévole</strong> : nom, coordonnées, ville, missions souhaitées, disponibilités et message ;</li>
-      <li>via une <strong>promesse de don</strong> : nom, coordonnées, montant, mode de règlement et message éventuel, utilisés uniquement pour le suivi du don ;</li>
-      <li>via un <strong>don</strong> : les données nécessaires au traitement du don par notre prestataire de paiement.</li>
-      {% if site.org.ga4 != "" %}<li>avec votre accord, des <strong>statistiques de visite</strong> (voir « Cookies &amp; mesure d'audience » ci-dessous).</li>{% endif %}
+      <li><strong>Formulaire de contact</strong> : nom, e-mail, sujet et message, pour répondre à votre demande. Conservés 3 ans après notre dernier échange.</li>
+      <li><strong>Newsletter</strong> : adresse e-mail, pour vous informer de nos actions, avec votre accord. Conservée jusqu'à votre désinscription, possible à tout moment sur simple demande ou via le lien présent dans chaque lettre.</li>
+      <li><strong>Formulaire bénévole</strong> : nom, coordonnées, ville, missions souhaitées, disponibilités et message, pour étudier votre candidature et vous recontacter. Conservés 2 ans après notre dernier échange si aucune collaboration ne s'engage.</li>
+      <li><strong>Promesse de don</strong> : nom, coordonnées, montant, calendrier, mode de règlement et message éventuel, pour suivre le règlement de votre promesse. Conservés 3 ans si la promesse n'est pas réglée ; une fois le don reçu, les pièces comptables sont conservées 10 ans, comme l'exige la loi.</li>
+      {% if site.org.helloasso != "" %}<li><strong>Don en ligne</strong> : traité par HelloAsso, qui collecte les données nécessaires au paiement selon sa propre politique de confidentialité.</li>{% endif %}
+      <li><strong>Échanges sur WhatsApp</strong> : si vous choisissez de nous écrire sur WhatsApp, vos messages sont traités par WhatsApp (Meta) selon ses conditions ; nous n'en conservons que ce qui est utile au suivi de votre demande.</li>
+      {% if site.org.ga4 != "" %}<li><strong>Statistiques de visite</strong>, avec votre accord uniquement : voir « Cookies &amp; mesure d'audience » ci-dessous. Données conservées 14 mois dans Google Analytics.</li>{% endif %}
     </ul>
+    <p>Pour chaque formulaire, votre consentement est enregistré avec votre envoi : le texte accepté, la version de cette politique et la date. Les données sont réservées aux membres du bureau qui en ont besoin. Elles ne sont ni vendues, ni cédées à des tiers.</p>
 
-    <h2>Finalités</h2>
-    <p>Vos données servent uniquement à répondre à vos demandes, à vous informer de nos actions si vous y avez consenti, et à assurer le suivi des dons. Elles ne sont ni vendues, ni cédées à des tiers à des fins commerciales.</p>
+    <h2>Bases légales</h2>
+    <p>Votre consentement pour la newsletter et la mesure d'audience ; la réponse à votre demande pour les formulaires de contact, bénévole et promesse de don ; nos obligations légales pour la conservation des pièces comptables.</p>
 
-    <h2>Durée de conservation</h2>
-    <p>Vos données sont conservées le temps nécessaire à ces finalités, puis supprimées. Les données comptables liées aux dons sont conservées conformément aux obligations légales.</p>
+    <h2>Prestataires</h2>
+    <p>Nous faisons appel aux prestataires suivants, qui traitent certaines données pour notre compte :</p>
+    <ul>
+      <li><strong>GitHub, Inc.</strong> (États-Unis) : hébergement du site (GitHub Pages).</li>
+      <li><strong>OVHcloud</strong> (France) : nom de domaine et messagerie de l'association.</li>
+      <li><strong>Formspree, Inc.</strong> (États-Unis) : réception des formulaires (contact, newsletter, bénévole, promesse de don), transmis par e-mail à l'association.</li>
+      {% if site.org.ga4 != "" %}<li><strong>Google</strong> (Google Ireland Limited et Google LLC) : mesure d'audience, avec votre accord.</li>{% endif %}
+      {% if site.org.helloasso != "" %}<li><strong>HelloAsso</strong> (France) : collecte des dons en ligne.</li>{% endif %}
+    </ul>
+    <p>Lorsque des données sont transférées hors de l'Union européenne, ces transferts sont encadrés par les garanties prévues par le RGPD, selon le prestataire : cadre de protection des données UE–États-Unis ou clauses contractuelles types de la Commission européenne.</p>
+    <p>Les polices de caractères du site sont hébergées sur notre propre serveur : aucune donnée n'est transmise à un tiers pour les afficher.</p>
 
     <h2>Vos droits</h2>
-    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de portabilité de vos données. Pour l'exercer, contactez-nous {% if site.org.email != "" %}à {{ site.org.email }}{% else %}via notre <a href="{{ '/contact/' | relative_url }}" style="color:var(--green-deep)">page Contact</a>{% endif %}. Vous pouvez également saisir la CNIL.</p>
-
-    <h2>Hébergement &amp; sous-traitants</h2>
-    <p>Le site est hébergé par GitHub Pages. Les formulaires et la collecte de dons peuvent s'appuyer sur des prestataires (par exemple Formspree pour les formulaires, HelloAsso pour les dons{% if site.org.ga4 != "" %}, Google pour la mesure d'audience{% endif %}), qui traitent les données pour notre compte.</p>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données, et vous pouvez retirer votre consentement à tout moment. Pour exercer ces droits, contactez-nous {% if site.org.email != "" %}à {{ site.org.email }}{% else %}via notre <a href="{{ '/contact/' | relative_url }}" style="color:var(--green-deep)">page Contact</a>{% endif %}. Nous répondons dans un délai d'un mois. Vous pouvez également adresser une réclamation à la <a href="https://www.cnil.fr" style="color:var(--green-deep)">CNIL</a>.</p>
 
     {% if site.org.ga4 != "" %}
     <h2 id="cookies">Cookies &amp; mesure d'audience</h2>
