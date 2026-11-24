@@ -29,7 +29,7 @@ _posts/                    → articles d'actualité (1 fichier = 1 article)
 3. Le site sera publié sous `https://VOTRE-COMPTE.github.io/architectes-reussite-site/`.
 4. Quand votre **nom de domaine** (~12 €/an) sera prêt : ajoutez-le dans *Settings → Pages*, puis dans `_config.yml` mettez `url` à votre domaine et `baseurl: ""`.
 
-## À configurer (Phase 0) : tout  est centralisé dans `_config.yml`
+## À configurer (Phase 0) : tout est centralisé dans `_config.yml`
 
 | Champ | Rôle |
 |---|---|
@@ -41,19 +41,18 @@ _posts/                    → articles d'actualité (1 fichier = 1 article)
 
 Tant qu'un champ est vide, le site affiche un état honnête (« à venir », bouton désactivé, formulaire prêt mais inactif).
 
-## Ajouter un article d'actualité
+## Publier une action (page « Le terrain »)
 
-Créez un fichier `_posts/AAAA-MM-JJ-titre.md` :
+Chaque action a sa propre page, référencée par Google, et apparaît automatiquement dans la galerie filtrable.
 
-```
----
-layout: post
-title: "Titre de l'article"
-description: "Résumé court (bon pour le SEO)."
----
+1. Dupliquez `_activites/exemple-modele.md` et renommez la copie avec des mots simples, sans accent ni espace
+   (ex. `rentree-scolaire-2027.md` → page `/actualites/rentree-scolaire-2027/`).
+2. Remplissez les champs : titre, date, pilier, pays, résumé (`excerpt`), et si possible une vraie photo
+   (déposée dans `assets/img/activites/`) avec sa description (`image_alt`).
+3. Écrivez le récit sous les tirets (300 mots ou plus, avec des chiffres).
+4. Remplacez `published: false` par `published: true`, puis poussez.
 
-Le contenu en Markdown…
-```
+`featured: true` place l'action en tête, dans « À la une ». Sans action publiée, la page affiche « Nos premières actions arrivent ».
 
 ## À relire avant publication
 

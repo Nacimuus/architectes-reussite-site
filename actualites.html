@@ -1,8 +1,8 @@
 ---
 layout: default
 active: actualites
-title: "Le terrain"
-description: "Les avancées de nos trois piliers, les coulisses de nos opérations et les nouvelles de l'association."
+title: "Nos actions sur le terrain"
+description: "Les actions de l'association sur le terrain, pilier par pilier et pays par pays : formation, aide humanitaire et solidarité numérique."
 permalink: /actualites/
 ---
 
@@ -16,6 +16,7 @@ permalink: /actualites/
 
 {% assign acts = site.activites | sort: "date" | reverse %}
 {% assign featured = acts | where: "featured", true | first %}
+{% assign featured_photo = false %}{% if featured and featured.image and featured.image != "/assets/img/og-image.jpg" %}{% assign featured_photo = true %}{% endif %}
 
 <!-- À LA UNE (seulement si une action est mise en avant) -->
 {% if featured %}
@@ -23,8 +24,8 @@ permalink: /actualites/
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:20px"><span class="eyebrow">À la une</span></div>
     <article class="une">
-      <div class="visual {% if featured.image %}photo{% endif %}" {% if featured.image %}style="background-image:url('{{ featured.image | relative_url }}')"{% endif %}>
-        {% unless featured.image %}
+      <div class="visual {% if featured_photo %}photo{% endif %}" {% if featured_photo %}style="background-image:url('{{ featured.image | relative_url }}')"{% endif %}>
+        {% unless featured_photo %}
         <svg class="arcs" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none"><g stroke-linecap="round">
           <circle cx="300" cy="400" r="150" stroke="#FFD700" stroke-width="10" opacity=".5"/><circle cx="300" cy="400" r="210" stroke="#4AA3FF" stroke-width="10" opacity=".35"/><circle cx="300" cy="400" r="270" stroke="#3CB043" stroke-width="10" opacity=".28"/></g></svg>
         <div class="ph"><span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span><span class="country">{{ featured.pays }}</span></div>
@@ -32,9 +33,10 @@ permalink: /actualites/
       </div>
       <div class="body">
         <div class="tags"><span class="pilltag hum">{{ featured.pilier }}</span></div>
-        <h2>{{ featured.title }}</h2>
-        <div class="meta">{{ featured.date | date: "%-d %B %Y" }} · {{ featured.pays }}</div>
+        <h2><a href="{{ featured.url | relative_url }}" style="color:inherit">{{ featured.title }}</a></h2>
+        <div class="meta">{% include date-fr.html date=featured.date %} · {{ featured.pays }}</div>
         <p class="desc">{{ featured.excerpt }}</p>
+        <p style="margin-top:14px"><a href="{{ featured.url | relative_url }}" class="more" style="color:var(--green-deep);font-weight:600">Lire la suite →</a></p>
       </div>
     </article>
   </div>
@@ -71,17 +73,18 @@ permalink: /actualites/
     <div class="terr-grid">
       {% for a in acts %}
       {% assign cls = "" %}{% if a.pilier == "Académie" %}{% assign cls = "aca" %}{% elsif a.pilier contains "numérique" %}{% assign cls = "num" %}{% else %}{% assign cls = "hum" %}{% endif %}
-      {% if a.video != "" and a.video %}<a class="terr-card" href="{{ a.video }}" target="_blank" rel="noopener"{% else %}<div class="terr-card"{% endif %} data-pilier="{{ a.pilier }}" data-pays="{{ a.pays }}" data-annee="{{ a.date | date: '%Y' }}">
-        <div class="thumb" {% if a.image %}style="background-image:url('{{ a.image | relative_url }}')"{% endif %}>
-          {% if a.video != "" and a.video %}<div class="play"><span>▶</span></div>{% endif %}
+      {% assign has_photo = false %}{% if a.image and a.image != "/assets/img/og-image.jpg" %}{% assign has_photo = true %}{% endif %}
+      <a class="terr-card" href="{{ a.url | relative_url }}" data-pilier="{{ a.pilier }}" data-pays="{{ a.pays }}" data-annee="{{ a.date | date: '%Y' }}">
+        <div class="thumb" {% if has_photo %}style="background-image:url('{{ a.image | relative_url }}')"{% endif %}>
+          {% if a.video and a.video != "" %}<div class="play"><span>▶</span></div>{% endif %}
         </div>
         <div class="c">
           <div class="ct"><span>{{ a.pilier }}</span><span>{{ a.pays }}</span></div>
           <h3>{{ a.title }}</h3>
-          <div class="date">{{ a.date | date: "%-d %B %Y" }}</div>
+          <div class="date">{% include date-fr.html date=a.date %}</div>
           {% if a.excerpt %}<p>{{ a.excerpt }}</p>{% endif %}
         </div>
-      {% if a.video != "" and a.video %}</a>{% else %}</div>{% endif %}
+      </a>
       {% endfor %}
     </div>
     <div class="no-result">Aucune action ne correspond à ces filtres.</div>

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% assign has_photo = false %}{% if page.image and page.image != "/assets/img/og-image.jpg" %}{% assign has_photo = true %}{% endif %}
+<section class="phero act-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="{{ '/actualites/' | relative_url }}">Le terrain</a> · {{ page.pilier }}</div>
+    <h1>{{ page.title }}</h1>
+    <p class="act-meta">{% include date-fr.html date=page.date %}{% if page.pays %} · {{ page.pays }}{% endif %} · {{ page.pilier }}</p>
+    {% if page.excerpt %}<p class="lead">{{ page.excerpt | strip_html }}</p>{% endif %}
+  </div>
+</section>
+
+<section>
+  <div class="wrap act-body">
+    {% if has_photo %}
+    <figure class="act-figure">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+    </figure>
+    {% endif %}
+    {% if page.video and page.video != "" %}
+    <p class="act-video"><a class="btn btn-ghost" href="{{ page.video }}" target="_blank" rel="noopener">▶ Voir la vidéo</a></p>
+    {% endif %}
+    <div class="prose">
+      {{ content }}
+    </div>
+    <div class="act-share">
+      <a class="btn btn-wa" href="https://wa.me/?text={{ page.title | append: ' : ' | append: site.url | append: site.baseurl | append: page.url | url_encode }}" target="_blank" rel="noopener">Partager sur WhatsApp</a>
+      <a class="back-hub" href="{{ '/actualites/' | relative_url }}">← Toutes nos actions</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-don">
+  <div class="wrap">
+    <h2>Aidez-nous à mener la prochaine action.</h2>
+    <p>Un don, du matériel ou un peu de votre temps : chaque soutien compte.</p>
+    <div class="cta"><a href="{% if site.org.helloasso != "" %}{{ '/soutenir/' | relative_url }}{% else %}{{ '/promesse-de-don/' | relative_url }}{% endif %}" class="btn btn-don">Faire un don</a><a href="{{ '/soutenir/' | relative_url }}" class="btn btn-ghost">Autres façons d'aider</a></div>
+  </div>
+</section>

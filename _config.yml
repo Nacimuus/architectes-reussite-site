@@ -14,7 +14,13 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/og-image.jpg
+      image: /assets/img/og-image.jpg   # image de partage par défaut (ne pas changer ce chemin)
+  - scope:
+      path: ""
+      type: "activites"
+    values:
+      layout: "activite"
+      active: "actualites"
 
 # --- URL ---
 # Pour un site de projet GitHub Pages (nacimuus.github.io/architectes-reussite-site) :
@@ -39,7 +45,8 @@ permalink: pretty
 
 collections:
   activites:
-    output: false
+    output: true                       # chaque action a sa propre page
+    permalink: /actualites/:name/      # ex. /actualites/rentree-scolaire-2027/
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
