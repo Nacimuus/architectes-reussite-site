@@ -31,6 +31,7 @@
       "addressCountry": "FR"
     },
     {% if site.org.email != "" %}"email": "{{ site.org.email }}",{% endif %}
+    {% if site.org.rna != "" %}"identifier": { "@type": "PropertyValue", "propertyID": "RNA", "value": "{{ site.org.rna }}" },{% endif %}
     "areaServed": [
       { "@type": "Country", "name": "France" },
       { "@type": "Country", "name": "Algérie" },

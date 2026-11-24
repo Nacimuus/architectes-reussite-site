@@ -10,7 +10,7 @@
     <div class="fgrid">
       <div>
         <h4>Les Architectes de la Réussite</h4>
-        <p class="faddr">Association loi 1901<br>
+        <p class="faddr">Association loi 1901{% if site.org.rna != "" %} · RNA {{ site.org.rna }}{% endif %}<br>
           {{ site.org.address }}<br><br>
           {% if site.org.email != "" %}{{ site.org.email }}{% else %}contact@… <em style="opacity:.6">(à venir)</em>{% endif %}
         </p>
