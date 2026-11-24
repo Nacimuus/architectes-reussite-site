@@ -60,7 +60,7 @@ Le contenu en Markdown…
 - **Solidarité numérique** : première version rédactionnelle, à valider.
 - **Mentions légales** et **Politique de confidentialité** : modèles à compléter/valider.
 - **Logo** : version détourée fournie ; prévoir un logo vectoriel (SVG) pour une netteté parfaite à terme.
-- **Photos** : aucune photo fictive. Les vrais visuels de terrain viendront enrichir le site après la première opération (septembre 2026).
+- **Photos** : aucune photo fictive. Les vrais visuels de terrain viendront enrichir le site après les premières actions.
 
 ## Développer en local (facultatif)
 

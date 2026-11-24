@@ -17,11 +17,11 @@ permalink: /actualites/
 {% assign acts = site.activites | sort: "date" | reverse %}
 {% assign featured = acts | where: "featured", true | first %}
 
-<!-- À LA UNE -->
+<!-- À LA UNE (seulement si une action est mise en avant) -->
+{% if featured %}
 <div class="une-wrap">
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:20px"><span class="eyebrow">À la une</span></div>
-    {% if featured %}
     <article class="une">
       <div class="visual {% if featured.image %}photo{% endif %}" {% if featured.image %}style="background-image:url('{{ featured.image | relative_url }}')"{% endif %}>
         {% unless featured.image %}
@@ -37,29 +37,9 @@ permalink: /actualites/
         <p class="desc">{{ featured.excerpt }}</p>
       </div>
     </article>
-    {% else %}
-    <!-- À la une par défaut : opération Algérie en cours -->
-    <article class="une">
-      <div class="visual">
-        <svg class="arcs" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none"><g stroke-linecap="round">
-          <circle cx="300" cy="400" r="150" stroke="#FFD700" stroke-width="10" opacity=".5"/>
-          <circle cx="300" cy="400" r="210" stroke="#4AA3FF" stroke-width="10" opacity=".35"/>
-          <circle cx="300" cy="400" r="270" stroke="#3CB043" stroke-width="10" opacity=".28"/>
-          <circle cx="300" cy="400" r="330" stroke="#FF5733" stroke-width="10" opacity=".2"/></g></svg>
-        <span class="chip">Photos &amp; bilan en septembre 2026</span>
-        <div class="ph"><span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span><span class="country">Algérie</span></div>
-      </div>
-      <div class="body">
-        <div class="tags"><span class="pilltag hum">Actions humanitaires</span><span class="pilltag live">En cours</span></div>
-        <h2>Collecte de rentrée scolaire</h2>
-        <div class="meta">Été 2026 · Algérie</div>
-        <p class="desc">Notre toute première opération est en cours : constituer et acheminer des « starter packs » scolaires complets (cahiers, stylos, cartables, fournitures) pour des enfants accueillis en orphelinat, avant la rentrée.</p>
-        <p class="note">Premiers résultats, chiffres et images publiés en septembre 2026.</p>
-      </div>
-    </article>
-    {% endif %}
   </div>
 </div>
+{% endif %}
 
 <!-- GALERIE FILTRABLE -->
 <section>
@@ -109,7 +89,7 @@ permalink: /actualites/
     <div class="terr-empty">
       <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
       <h3>Nos premières actions arrivent</h3>
-      <p>Résultats de l'opération Algérie en septembre 2026.</p>
+      <p>Elles seront publiées ici dès leur lancement. <a href="{{ '/' | relative_url }}#newsletter" style="color:var(--green-deep);font-weight:600">Inscrivez-vous à la newsletter</a> pour être prévenu.</p>
     </div>
     {% endif %}
   </div>
