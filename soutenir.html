@@ -36,13 +36,14 @@ permalink: /soutenir/
         <span class="top" style="background:var(--gold)"></span>
         <h3>Donner en nature</h3>
         <p>Fournitures scolaires, vêtements, matériel informatique à reconditionner : vos dons matériels partent directement sur le terrain.</p>
-        <p style="margin-top:16px"><a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20souhaite%20proposer%20un%20don%20en%20nature%20%C3%A0%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa">Contactez-nous directement, 24/7</a></p>
+        <p style="margin-top:16px"><a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20souhaite%20proposer%20un%20don%20en%20nature%20%C3%A0%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa" data-wa="don_nature">Contactez-nous directement, 24/7</a></p>
       </div>
       <div class="support-card">
         <span class="top" style="background:var(--green)"></span>
         <h3>Nous rejoindre</h3>
         <p>Bénévole, mentor, formateur, structure partenaire : votre temps et votre réseau font grandir l'association.</p>
-        <p style="margin-top:16px"><a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20souhaite%20m%27engager%20aupr%C3%A8s%20de%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa">Contactez-nous directement, 24/7</a></p>
+        <p style="margin-top:16px"><a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20souhaite%20m%27engager%20aupr%C3%A8s%20de%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa" data-wa="rejoindre">Contactez-nous directement, 24/7</a></p>
+        <p style="font-size:13.5px;margin-top:10px"><a href="#rejoindre" style="color:var(--green-deep);font-weight:600">Ou remplissez le formulaire bénévole ↓</a></p>
       </div>
     </div>
 
@@ -52,10 +53,77 @@ permalink: /soutenir/
   </div>
 </section>
 
+<section id="rejoindre" class="join-sec">
+  <div class="wrap">
+    <div class="join-wrap">
+      <div>
+        <span class="eyebrow">Nous rejoindre</span>
+        <h2>Donnez un peu de votre temps.</h2>
+        <p class="join-lead">Bénévole, mentor, formateur ou structure partenaire : dites-nous ce que vous aimeriez apporter. Nous vous recontactons pour en parler, sans engagement.</p>
+        <ol class="pledge-steps">
+          <li><strong>Vous nous écrivez</strong><span>Deux minutes pour nous dire qui vous êtes et comment vous aimeriez aider.</span></li>
+          <li><strong>Nous échangeons</strong><span>Un appel ou un message pour trouver la mission qui vous correspond.</span></li>
+          <li><strong>Vous rejoignez une action</strong><span>Sur le terrain, à distance ou ponctuellement, à votre rythme.</span></li>
+        </ol>
+      </div>
+
+      <form id="join-form" class="pledge-card js-form" action="{{ site.org.formspree }}" method="POST" data-status="join-status" data-event="candidature_benevole" data-success="Merci ! Votre candidature est bien envoyée. Nous vous recontactons très vite pour en parler.">
+        <input type="hidden" name="_subject" value="Nouvelle candidature bénévole">
+        <input type="hidden" name="type" value="Candidature bénévole">
+        <input type="hidden" name="missions" value="">
+        <fieldset>
+          <legend>Vos coordonnées</legend>
+          <div class="field"><label for="jn-nom">Prénom et nom <span class="req" aria-hidden="true">*</span></label><input id="jn-nom" type="text" name="nom" autocomplete="name" required></div>
+          <div class="field"><label for="jn-email">E-mail <span class="req" aria-hidden="true">*</span></label><input id="jn-email" type="email" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="jn-tel">Téléphone (facultatif)</label><input id="jn-tel" type="tel" name="telephone" autocomplete="tel"></div>
+          <div class="field"><label for="jn-ville">Ville (facultatif)</label><input id="jn-ville" type="text" name="ville" autocomplete="address-level2"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Comment aimeriez-vous aider ?</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="checkbox" class="join-mission" value="Actions de terrain"><span>Actions de terrain</span></label>
+            <label class="choice"><input type="checkbox" class="join-mission" value="Mentorat et formation"><span>Mentorat et formation</span></label>
+            <label class="choice"><input type="checkbox" class="join-mission" value="Collecte et logistique"><span>Collecte et logistique</span></label>
+            <label class="choice"><input type="checkbox" class="join-mission" value="Communication et réseaux sociaux"><span>Communication et réseaux sociaux</span></label>
+            <label class="choice"><input type="checkbox" class="join-mission" value="Informatique et reconditionnement"><span>Informatique et reconditionnement</span></label>
+            <label class="choice"><input type="checkbox" class="join-mission" value="Partenariat (entreprise, école, structure)"><span>Partenariat (entreprise, école, structure)</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Vos disponibilités</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="disponibilite" value="Ponctuellement, pour une action" checked><span>Ponctuellement, pour une action</span></label>
+            <label class="choice"><input type="radio" name="disponibilite" value="Quelques heures par mois"><span>Quelques heures par mois</span></label>
+            <label class="choice"><input type="radio" name="disponibilite" value="Quelques heures par semaine"><span>Quelques heures par semaine</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Parlez-nous de vous</legend>
+          <div class="field"><label for="jn-message" class="sr-only">Votre message (facultatif)</label><textarea id="jn-message" name="message" rows="3" placeholder="Votre parcours, vos compétences, ce qui vous motive (facultatif)"></textarea></div>
+        </fieldset>
+        <label class="consent" style="display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);margin-bottom:18px">
+          <input type="checkbox" required style="margin-top:3px">
+          <span>J'accepte que mes coordonnées soient utilisées uniquement pour donner suite à ma candidature, conformément à la <a href="{{ '/politique-confidentialite/' | relative_url }}" style="color:var(--green-deep)">politique de confidentialité</a>.</span>
+        </label>
+        <button class="btn btn-solid pledge-submit" type="submit">Envoyer ma candidature</button>
+        <p id="join-status" class="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  // regroupe les missions cochées dans un seul champ envoyé à Formspree
+  (function(){
+    var f=document.getElementById('join-form'); if(!f) return;
+    var out=f.querySelector('[name="missions"]');
+    f.addEventListener('change', function(){ out.value=[].map.call(f.querySelectorAll('.join-mission:checked'), function(c){ return c.value; }).join(', '); });
+  })();
+</script>
+
 <section class="cta-don">
   <div class="wrap">
     <h2>Une question avant de soutenir ?</h2>
     <p>Écrivez-nous, nous vous répondrons personnellement.</p>
-    <div class="cta"><a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20souhaite%20m%27engager%20aupr%C3%A8s%20de%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa">Contactez-nous, 24/7</a><a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Formulaire de contact</a></div>
+    <div class="cta"><a href="https://wa.me/33749692850?text=Bonjour%2C%20je%20souhaite%20m%27engager%20aupr%C3%A8s%20de%20l%27association%20Les%20Architectes%20de%20la%20R%C3%A9ussite." target="_blank" rel="noopener" class="btn btn-wa" data-wa="question">Contactez-nous, 24/7</a><a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Formulaire de contact</a></div>
   </div>
 </section>
