@@ -21,6 +21,10 @@ defaults:
     values:
       layout: "activite"
       active: "actualites"
+  - scope:
+      path: "carte"                    # cartes de visite NFC : pages masquées
+    values:
+      sitemap: false
 
 # --- URL ---
 # Pour un site de projet GitHub Pages (nacimuus.github.io/architectes-reussite-site) :
