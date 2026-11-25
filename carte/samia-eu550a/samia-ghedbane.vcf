@@ -3,10 +3,12 @@ VERSION:3.0
 N:Ghedbane;Samia;;;
 FN:Samia Ghedbane
 ORG:Les Architectes de la Réussite
-TITLE:Membre de l'équipe
+TITLE:Directrice communication
 EMAIL;TYPE=INTERNET:Samia.ghedbane1994@gmail.com
 TEL;TYPE=CELL:+33 6 24 68 84 14
 URL:https://lesarchitectesdelareussite.com
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/samia-ghedbane-7b5348104/
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/samia-ghedbane-7b5348104/
 ADR;TYPE=WORK:;;36 rue Baudin;Courbevoie;;92400;France
-NOTE:Membre de l'équipe de l'association Les Architectes de la Réussite.
+NOTE:Directrice communication de l'association Les Architectes de la Réussite.
 END:VCARD
