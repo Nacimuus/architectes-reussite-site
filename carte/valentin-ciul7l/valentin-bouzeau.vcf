@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bouzeau;Valentin;;;
+FN:Valentin Bouzeau
+ORG:Les Architectes de la Réussite
+TITLE:Directeur pédagogique
+EMAIL;TYPE=INTERNET,WORK:contact@lesarchitectesdelareussite.com
+TEL;TYPE=WORK:+33 7 49 69 28 50
+URL:https://lesarchitectesdelareussite.com
+ADR;TYPE=WORK:;;36 rue Baudin;Courbevoie;;92400;France
+NOTE:Directeur pédagogique de l'association Les Architectes de la Réussite.
+END:VCARD
