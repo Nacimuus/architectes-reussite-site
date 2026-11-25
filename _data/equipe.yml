@@ -38,6 +38,18 @@
     - "Relations humaines"
   presentation: "Manager de terrain, Soraya met son sens de l'organisation au service de la solidarité et de l'entraide. Elle compte plus de 10 ans dans le Facility Management, à la tête d'équipes dans le nettoyage industriel : gestion, coordination et relations humaines sont son quotidien."
 
+- prenom: "Samia"
+  nom: "Ghedbane"
+  role: "Directrice communication"
+  photo: "/assets/img/team-samia-card.webp"
+  competences:
+    - "Communication"
+    - "Négociation"
+    - "Développement commercial"
+    - "Relationnel"
+    - "Créativité"
+  presentation: "Créative et tournée vers les autres, Samia met son sens du relationnel au service du rayonnement des gens qui l'entourent. Elle compte 14 ans dans la relation client, le conseil et le développement commercial : communication, négociation et travail d'équipe sont son terrain de jeu."
+
 - prenom: "Valentin"
   nom: "Bouzeau"
   role: "Directeur pédagogique"
