@@ -1,0 +1,45 @@
+# Équipe affichée sur la page L'association (/qui-sommes-nous/), dans l'ordre de la liste.
+# photo : chemin vers l'image (format .webp conseillé, portrait). Laisser vide pour afficher les initiales.
+# competences : 3 ou 4 compétences courtes.
+# presentation : un paragraphe (affiché au dos de la carte).
+
+- prenom: "Nacim"
+  nom: "Touenti"
+  role: "Président & fondateur"
+  photo: "/assets/img/team-nacim.webp"
+  competences:
+    - "Gestion de projet internationale"
+    - "Formation et pédagogie"
+    - "Paiement électronique"
+    - "Stratégie et partenariats"
+  presentation: "Directeur de projet à l'échelle EMEA dans le secteur du paiement électronique, Nacim intervient aussi en MBA et en Master. Il a fondé l'association pour transmettre ce qu'il a reçu : un cap, une méthode et une main tendue. Il pilote la stratégie et les partenariats."
+
+- prenom: "Zebir"
+  nom: "Touenti"
+  role: "Trésorier"
+  photo: ""
+  competences:
+    - "Gestion financière"
+    - "Suivi des dons"
+    - "Transparence des comptes"
+  presentation: "Garant de la gestion financière et de la transparence des comptes de l'association."
+
+- prenom: "Lamine"
+  nom: "Diabi"
+  role: "Membre"
+  photo: ""
+  competences:
+    - "Milieu scolaire"
+    - "Vente et relation client"
+    - "Déploiement terrain"
+  presentation: "Fort d'une expérience du milieu scolaire et de la vente, Lamine appuie le déploiement des actions de l'association."
+
+- prenom: "Valentin"
+  nom: "Bouzeau"
+  role: "Membre"
+  photo: "/assets/img/team-valentin.webp"
+  competences:
+    - "Pédagogie"
+    - "Enseignement primaire"
+    - "Conception de programmes"
+  presentation: "Professeur des écoles, Valentin apporte son regard pédagogique aux programmes de l'association."
