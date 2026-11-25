@@ -723,3 +723,4 @@ button[disabled]{opacity:.6;cursor:wait}
 @media(max-width:860px){.pgrid-neo{grid-template-columns:1fr;gap:26px}.pcard{padding:28px 22px 24px}}
 @media(prefers-reduced-motion:reduce){.pcard.lit .colonnade i{animation:none}}
 .contact-direct{padding:56px 0 0}.contact-direct .wa-hero{margin-bottom:0}
+.assoc-hero .h1-em{color:var(--gold)}
