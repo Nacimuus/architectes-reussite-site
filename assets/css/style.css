@@ -724,3 +724,31 @@ button[disabled]{opacity:.6;cursor:wait}
 @media(prefers-reduced-motion:reduce){.pcard.lit .colonnade i{animation:none}}
 .contact-direct{padding:56px 0 0}.contact-direct .wa-hero{margin-bottom:0}
 .assoc-hero .h1-em{color:var(--gold)}
+
+/* ===== optimisation mobile, toutes pages (nov. 2026) ===== */
+button,input,select,textarea{font-family:inherit}
+a[href^="mailto:"]{overflow-wrap:break-word}
+.rich p,.legal p,.prose p{overflow-wrap:break-word}
+.news .consent{align-items:flex-start;text-align:left}
+.news .consent input{margin-top:3px;flex:none}
+@media(max-width:860px){
+  /* champs à 16 px : évite le zoom automatique d'iOS au toucher */
+  .field input,.field textarea,.field select,.news input[type=email],.amount-free input{font-size:16px}
+  /* bandeaux d'en-tête clairs : moins de vide */
+  .phero .wrap{padding:44px 24px 40px}
+  /* bloc « Contactez-nous directement » : bouton sur toute la largeur */
+  .wa-hero{padding:24px 20px}
+  .wa-hero .btn{white-space:normal;text-align:center;width:100%;justify-content:center}
+  .support-card .btn-wa{white-space:normal;text-align:center}
+  /* zones tactiles d'au moins 44 px */
+  .fnav a,.fnav .flink{padding:9px 0;min-height:44px;display:flex;align-items:center}
+  .crumb a{display:inline-block;padding:10px 0}
+  .back-hub{padding:12px 0}
+  .cb-link{padding:12px 8px;margin-top:4px}
+  .tc-flip{min-height:42px}
+  .tc-skills li{font-size:12px}
+  .tc-role{font-size:11px}
+  .pcard .pill{font-size:12px}
+  .consent a{display:inline-block;padding:4px 0}
+}
+@media(max-width:350px){.tcard{height:500px}.tc-back{padding:22px 18px 18px}.tc-back p{font-size:13px;line-height:1.5}}

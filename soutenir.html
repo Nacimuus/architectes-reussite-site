@@ -148,7 +148,7 @@ permalink: /soutenir/
         <h2>Nos coordonnées</h2>
         <p><strong>Les Architectes de la Réussite</strong><br>Association loi 1901<br>{{ site.org.address }}</p>
         <p>
-          {% if site.org.email != "" %}<strong>E-mail :</strong> <a href="mailto:{{ site.org.email }}" style="color:var(--green-deep)">{{ site.org.email }}</a><br>{% else %}<strong>E-mail :</strong> en cours d'activation<br>{% endif %}
+          {% if site.org.email != "" %}<strong>E-mail :</strong> <a href="mailto:{{ site.org.email }}" style="color:var(--green-deep)">{{ site.org.email | replace: "@", "@<wbr>" }}</a><br>{% else %}<strong>E-mail :</strong> en cours d'activation<br>{% endif %}
           {% if site.org.linkedin != "" %}<strong>LinkedIn :</strong> <a href="{{ site.org.linkedin }}" style="color:var(--green-deep)">notre page</a>{% endif %}
         </p>
         <div class="note-box"><strong>Dons en nature &amp; matériel informatique :</strong> précisez-nous la nature et le volume, nous organisons la suite avec vous.</div>
