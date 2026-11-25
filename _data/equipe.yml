@@ -26,6 +26,18 @@
     - "Confiance"
   presentation: "Curieux, réfléchi et animé par une volonté constante d'apprendre et de progresser. Engagé depuis de nombreuses années auprès des jeunes, Lamine anime des groupes et crée des ponts entre les pays, avec le regard d'un entrepreneur et l'expérience du monde de l'entreprise."
 
+- prenom: "Soraya"
+  nom: "Talha"
+  role: "Trésorière & Directrice budget et finance"
+  photo: "/assets/img/team-soraya-card.webp"
+  competences:
+    - "Gestion"
+    - "Organisation"
+    - "Coordination"
+    - "Management d'équipe"
+    - "Relations humaines"
+  presentation: "Manager de terrain, Soraya met son sens de l'organisation au service de la solidarité et de l'entraide. Elle compte plus de 10 ans dans le Facility Management, à la tête d'équipes dans le nettoyage industriel : gestion, coordination et relations humaines sont son quotidien."
+
 - prenom: "Valentin"
   nom: "Bouzeau"
   role: "Directeur pédagogique"
