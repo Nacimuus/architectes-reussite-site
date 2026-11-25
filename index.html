@@ -16,7 +16,7 @@ permalink: /
       <h1>Former, équiper,<br>transmettre.</h1>
       <p class="lead">Notre mission : relier les jeunesses de France et d'Afrique par la formation, l'action humanitaire et la solidarité numérique.</p>
       <div class="cta">
-        <a href="{{ '/programmes/' | relative_url }}" class="btn btn-solid">Découvrir nos piliers</a>
+        <a href="{{ '/' | relative_url }}#piliers" class="btn btn-solid">Découvrir nos piliers</a>
         <a href="{{ '/soutenir/' | relative_url }}" class="btn btn-ghost">S'engager</a>
       </div>
     </div>
@@ -31,69 +31,107 @@ permalink: /
   </div>
 </div>
 
-<!-- RAISON D'ÊTRE (pictogrammes) -->
-<section class="raison">
+<!-- PILIERS -->
+<section class="piliers-neo" id="piliers">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Notre raison d'être</span><h2>Trois convictions, un même cap.</h2></div>
-    <div class="pictos">
-      <div class="picto">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 6.6a3 3 0 0 1 0 5.6"/><path d="M20.5 19a5.5 5.5 0 0 0-3.2-5"/></svg></div>
+    <div class="sec-head"><span class="eyebrow">Ce que nous faisons</span><h2>Nos trois piliers</h2></div>
+    <div class="pgrid-neo">
+      <article class="pcard aca">
+        <div class="pc-top"><span class="pill">Pilier</span><span class="colonnade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+        <h3>Académie</h3>
+        <p>Une Académie qui forme gratuitement les jeunes de France et d'Afrique aux soft skills, à la gestion de projet, à la création d'entreprise et au numérique, en présentiel sur le terrain, puis à distance sur plusieurs mois.</p>
+        <div class="pc-foot"><a href="{{ '/programmes/academie/' | relative_url }}" class="go">Découvrir l'Académie →</a></div>
+      </article>
+      <article class="pcard hum">
+        <div class="pc-top"><span class="pill">Pilier</span><span class="colonnade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+        <h3>Le Socle</h3>
+        <p>L'ancrage terrain. Nous accompagnons des orphelinats tout au long de l'année, en tissant une relation de proximité, et distribuons des biens collectés en Europe (fournitures, matériel scolaire, soutien aux plus vulnérables) au plus près des besoins.</p>
+        <div class="pc-foot"><a href="{{ '/programmes/actions-humanitaires/' | relative_url }}" class="go">Découvrir Le Socle →</a><span class="tag-soon">Premières actions en préparation.</span></div>
+      </article>
+      <article class="pcard num">
+        <div class="pc-top"><span class="pill">Pilier</span><span class="colonnade" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+        <h3>La Clé de Voûte</h3>
+        <p>Contre la fracture numérique. Nous collectons et reconditionnons du matériel informatique pour équiper celles et ceux qui en manquent (populations, commerces, structures publiques, écoles et orphelinats) et faciliter l'accès et l'initiation au numérique.</p>
+        <div class="pc-foot"><a href="{{ '/programmes/solidarite-numerique/' | relative_url }}" class="go">Découvrir La Clé de Voûte →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var cards=document.querySelectorAll('.pcard');
+  cards.forEach(function(c){
+    function lit(){ cards.forEach(function(o){ if(o!==c) o.classList.remove('lit'); }); c.classList.toggle('lit'); }
+    c.addEventListener('click',function(e){ if(e.target.closest('a')) return; lit(); });
+  });
+})();
+</script>
+
+<!-- CONVICTIONS -->
+<section class="conv">
+  <svg class="conv-arcs" viewBox="0 0 1200 600" aria-hidden="true" fill="none"><g stroke-linecap="round">
+    <circle cx="600" cy="640" r="250" stroke="var(--gold)" stroke-width="2" opacity=".35"/>
+    <circle cx="600" cy="640" r="340" stroke="var(--green)" stroke-width="2" opacity=".28"/>
+    <circle cx="600" cy="640" r="430" stroke="var(--blue)" stroke-width="2" opacity=".24"/>
+    <circle cx="600" cy="640" r="520" stroke="var(--red)" stroke-width="2" opacity=".18"/>
+  </g></svg>
+  <div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Notre raison d'être</span><h2>Trois convictions, un même cap.</h2></div>
+    <div class="conv-grid">
+      <div class="conv-card">
+        <div class="conv-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 6.6a3 3 0 0 1 0 5.6"/><path d="M20.5 19a5.5 5.5 0 0 0-3.2-5"/></svg></div>
         <h3>Personne ne réussit seul</h3>
         <p>L'accompagnement, la transmission et l'inspiration changent des destins.</p>
       </div>
-      <div class="picto">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8.2 10.9 15.8 7.1M8.2 13.1 15.8 16.9"/></svg></div>
+      <div class="conv-card">
+        <div class="conv-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8.2 10.9 15.8 7.1M8.2 13.1 15.8 16.9"/></svg></div>
         <h3>La réussite se transmet</h3>
         <p>Elle se partage, et elle propulse plus haut celles et ceux qui la reçoivent.</p>
       </div>
-      <div class="picto">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 16 Q12 6 21 16"/><path d="M3 16v3M21 16v3M12 11v7"/></svg></div>
+      <div class="conv-card">
+        <div class="conv-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 16 Q12 6 21 16"/><path d="M3 16v3M21 16v3M12 11v7"/></svg></div>
         <h3>On sert d'où l'on vient</h3>
         <p>Révéler les jeunes de nos quartiers, et rendre à l'Afrique ce qu'elle nous a donné.</p>
       </div>
     </div>
-    <a href="{{ '/qui-sommes-nous/' | relative_url }}" class="bubble">Notre histoire →</a>
-  </div>
-</section>
-
-<div class="rip"><svg viewBox="0 0 120 26" fill="none"><g stroke-linecap="round"><path d="M10 24 A50 50 0 0 1 110 24" stroke="var(--gold)" stroke-width="3"/><path d="M26 24 A34 34 0 0 1 94 24" stroke="var(--blue)" stroke-width="3"/><path d="M42 24 A18 18 0 0 1 78 24" stroke="var(--green)" stroke-width="3"/></g></svg></div>
-
-<!-- PILIERS -->
-<section class="piliers">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Nos trois piliers</span><h2>Un même but, trois manières d'agir.</h2></div>
-    <div class="grid3">
-      <div class="pillar aca"><span class="bar"></span>
-        <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
-        <h3>Académie</h3>
-        <p>Transmettre des compétences aux jeunes de France et d'Afrique : soft skills, gestion de projet, création d'entreprise, digital.</p>
-        <a href="{{ '/programmes/academie/' | relative_url }}" class="more">En savoir plus →</a>
-      </div>
-      <div class="pillar hum"><span class="bar"></span>
-        <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
-        <h3>Actions humanitaires</h3>
-        <p>Collecter en Europe et distribuer sur le terrain : matériel scolaire, « starter packs » de rentrée, soutien aux plus vulnérables.</p>
-        <a href="{{ '/programmes/actions-humanitaires/' | relative_url }}" class="more">En savoir plus →</a>
-      </div>
-      <div class="pillar num"><span class="bar"></span>
-        <span class="colonnade"><i></i><i></i><i></i><i></i><i></i></span>
-        <h3>Solidarité numérique</h3>
-        <p>Lutter contre la fracture numérique : collecter et reconditionner du matériel, équiper les structures partenaires, faciliter l'accès.</p>
-        <a href="{{ '/programmes/solidarite-numerique/' | relative_url }}" class="more">En savoir plus →</a>
-      </div>
-    </div>
+    <div class="conv-cta"><a href="{{ '/qui-sommes-nous/' | relative_url }}" class="btn conv-btn">Notre histoire →</a></div>
   </div>
 </section>
 
 <!-- VALEURS -->
-<section class="valeurs">
+<section class="valeurs2">
   <div class="wrap">
     <div class="sec-head center"><span class="eyebrow">Ce qui nous guide</span><h2>Nos quatre valeurs</h2></div>
-    <div class="grid4">
-      <div class="value"><div class="k"><b></b></div><h3>Kaizen</h3><p>L'amélioration continue. Progresser un peu chaque jour, refuser la stagnation.</p></div>
-      <div class="value"><div class="k"><b></b></div><h3>Ubuntu</h3><p>« Je suis parce que nous sommes. » Aucune réussite n'a de sens sans le collectif.</p></div>
-      <div class="value"><div class="k"><b></b></div><h3>Gambaru</h3><p>La persévérance. Avancer face aux épreuves, ne jamais renoncer.</p></div>
-      <div class="value"><div class="k"><b></b></div><h3>Ambition</h3><p>Viser haut sans complexe, croire au potentiel de chacun.</p></div>
+    <div class="vgrid">
+      <article class="vcard g">
+        <span class="v-band" aria-hidden="true"></span>
+        <svg class="v-enso" viewBox="0 0 120 120" aria-hidden="true"><path d="M92 26 A44 44 0 1 0 100 70" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+        <h3>Kaizen</h3>
+        <p>L'amélioration continue. Progresser un peu chaque jour, refuser la stagnation.</p>
+        <span class="v-seal" aria-hidden="true">K</span>
+      </article>
+      <article class="vcard r">
+        <span class="v-band" aria-hidden="true"></span>
+        <svg class="v-enso" viewBox="0 0 120 120" aria-hidden="true"><path d="M92 26 A44 44 0 1 0 100 70" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+        <h3>Ubuntu</h3>
+        <p>« Je suis parce que nous sommes. » Aucune réussite n'a de sens sans le collectif.</p>
+        <span class="v-seal" aria-hidden="true">U</span>
+      </article>
+      <article class="vcard o">
+        <span class="v-band" aria-hidden="true"></span>
+        <svg class="v-enso" viewBox="0 0 120 120" aria-hidden="true"><path d="M92 26 A44 44 0 1 0 100 70" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+        <h3>Gambaru</h3>
+        <p>La persévérance. Avancer face aux épreuves, ne jamais renoncer.</p>
+        <span class="v-seal" aria-hidden="true">G</span>
+      </article>
+      <article class="vcard b">
+        <span class="v-band" aria-hidden="true"></span>
+        <svg class="v-enso" viewBox="0 0 120 120" aria-hidden="true"><path d="M92 26 A44 44 0 1 0 100 70" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+        <h3>Ambition</h3>
+        <p>Viser haut sans complexe, croire au potentiel de chacun.</p>
+        <span class="v-seal" aria-hidden="true">A</span>
+      </article>
     </div>
   </div>
 </section>
