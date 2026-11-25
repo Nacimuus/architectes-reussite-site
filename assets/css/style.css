@@ -572,7 +572,7 @@ button[disabled]{opacity:.6;cursor:wait}
 .tc-back p{margin:20px 0;font-size:15px;line-height:1.72;color:var(--ink-soft);overflow:auto}
 
 @media(max-width:860px){
-  .story .chapters,      .tcard{flex-basis:82vw;max-width:330px}
+  .tcard{flex-basis:82vw;max-width:330px}
   }
 @media(prefers-reduced-motion:reduce){.tc-inner{transition:none}}
 
@@ -626,3 +626,31 @@ button[disabled]{opacity:.6;cursor:wait}
 @media(max-width:860px){.ttrack{-webkit-mask:linear-gradient(90deg,#000 calc(100% - 70px),transparent 100%);mask:linear-gradient(90deg,#000 calc(100% - 70px),transparent 100%)}}
 @media(max-width:860px){.tarrow{top:110px}}
 .tcard{height:600px}.tc-skills{margin-bottom:18px}
+
+.swipe-hint{display:none}
+/* mobile : histoire en encadrés empilés, cartes équipe plus compactes */
+@media(max-width:860px){
+  .story .chapters{grid-template-columns:1fr;gap:46px}
+  .story .chapters li{background:#fff;border:1px solid var(--line);border-top-width:4px;border-radius:var(--r);padding:22px 22px 20px;box-shadow:0 8px 22px rgba(19,32,26,.06)}
+  .story .chapters li:nth-child(1){border-top-color:var(--green)} .story .chapters li:nth-child(2){border-top-color:var(--gold)} .story .chapters li:nth-child(3){border-top-color:var(--blue)}
+  .story .chapters h3{font-size:1.3rem}
+  .story .chapters p{font-size:1rem;line-height:1.65}
+  .story .chapters li:not(:last-child)::after{right:auto;left:calc(50% - 7px);top:auto;bottom:-31px;transform:rotate(135deg)}
+  .story .pull{margin-top:40px;font-size:1.25rem}
+}
+@media(max-width:600px){
+  .ttrack{gap:14px;padding:6px 24px 24px;-webkit-mask:linear-gradient(90deg,#000 calc(100% - 28px),transparent 100%);mask:linear-gradient(90deg,#000 calc(100% - 28px),transparent 100%)}
+  .tcard{flex:0 0 64vw;max-width:260px;height:470px}
+  .tc-photo{height:165px}
+  .tc-body{padding:18px 18px 18px}
+  .tc-face h3{font-size:1.28rem}
+  .tc-role{font-size:10.5px;letter-spacing:.11em}
+  .tc-skills{margin:12px 0 14px;gap:6px}
+  .tc-skills li{font-size:11.5px;padding:4px 9px}
+  .tc-flip{padding:8px 15px;font-size:13px}
+  .tc-back{padding:26px 20px 20px}
+  .tc-back p{font-size:13.5px;line-height:1.58;margin:12px 0}
+  .swipe-hint{display:inline}
+  .tarrow{display:none}
+  .team2{padding:72px 0 60px}
+}
