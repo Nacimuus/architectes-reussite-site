@@ -9,7 +9,7 @@ published: false
 
 title: "Titre de l'action"                  # court et précis : lieu + nature de l'action
 date: 2027-01-15                             # AAAA-MM-JJ (sert au filtre Année)
-pilier: "Actions humanitaires"               # Académie | Actions humanitaires | Solidarité numérique
+pilier: "Le Socle"                         # Académie | Le Socle | La Clé de Voûte
 pays: "Algérie"                              # sert au filtre Pays
 image: /assets/img/activites/mon-image.webp  # une vraie photo (facultatif ; supprimez la ligne s'il n'y en a pas)
 image_alt: "Ce que montre la photo"          # décrit la photo pour les malvoyants et Google

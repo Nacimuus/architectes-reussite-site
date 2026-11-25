@@ -56,7 +56,7 @@ Chaque action a sa propre page, référencée par Google, et apparaît automatiq
 
 ## À relire avant publication
 
-- **Solidarité numérique** : première version rédactionnelle, à valider.
+- **La Clé de Voûte** (solidarité numérique) : première version rédactionnelle, à valider.
 - **Mentions légales** et **Politique de confidentialité** : modèles à compléter/valider.
 - **Logo** : version détourée fournie ; prévoir un logo vectoriel (SVG) pour une netteté parfaite à terme.
 - **Photos** : aucune photo fictive. Les vrais visuels de terrain viendront enrichir le site après les premières actions.
