@@ -28,10 +28,12 @@
 
 - prenom: "Valentin"
   nom: "Bouzeau"
-  role: "Membre"
+  role: "Directeur pédagogique"
   photo: "/assets/img/team-valentin-card.webp"
   competences:
     - "Pédagogie"
-    - "Enseignement primaire"
-    - "Conception de programmes"
-  presentation: "Professeur des écoles, Valentin apporte son regard pédagogique aux programmes de l'association."
+    - "Coaching"
+    - "Patience"
+    - "Esprit d'équipe"
+    - "Analyse"
+  presentation: "Enseignant, coach et judoka, Valentin croit qu'on apprend autant des autres qu'on leur transmet. À l'Éducation nationale depuis de nombreuses années, il construit des classes soudées auprès des enfants, avec patience, positivité et la volonté d'avoir un impact positif dans la vie des autres."
