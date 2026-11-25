@@ -25,17 +25,14 @@ permalink: /qui-sommes-nous/
     <div class="sec-head"><span class="eyebrow">Notre histoire</span><h2>D'un parcours à un engagement</h2></div>
     <ol class="chapters">
       <li>
-        <span class="num">01</span>
         <h3>Un parcours</h3>
         <p>Notre fondateur a grandi en banlieue parisienne, dans une famille venue d'ailleurs. Il a longtemps cherché sa voie avant de construire une carrière internationale.</p>
       </li>
       <li>
-        <span class="num">02</span>
         <h3>Une conviction</h3>
         <p>Sur ce chemin, il a vu ce qui change un destin : quelqu'un qui transmet, qui accompagne, qui inspire. Aucun jeune ne devrait chercher sa voie seul.</p>
       </li>
       <li>
-        <span class="num">03</span>
         <h3>Une association</h3>
         <p>Le 14 avril 2025 naissent Les Architectes de la Réussite, pour rendre ce qui a été reçu : ici en France, et là-bas en Afrique.</p>
       </li>
@@ -49,9 +46,30 @@ permalink: /qui-sommes-nous/
     <div class="sec-head center"><span class="eyebrow">Notre vision</span><h2>Booster la réussite</h2>
       <p class="sub">Propulser les jeunesses de France et d'Afrique vers le sommet, à travers trois piliers égaux.</p></div>
     <div class="pbubbles">
-      <a class="pbubble g" href="{{ '/academie/' | relative_url }}"><h3>Académie</h3><p>Former gratuitement aux compétences qui ouvrent des portes.</p></a>
-      <a class="pbubble o" href="{{ '/actions-humanitaires/' | relative_url }}"><h3>Actions humanitaires</h3><p>Accompagner des orphelinats dans la durée.</p></a>
-      <a class="pbubble b" href="{{ '/solidarite-numerique/' | relative_url }}"><h3>Solidarité numérique</h3><p>Équiper celles et ceux qui manquent d'outils numériques.</p></a>
+      <a class="pbubble g" href="{{ '/academie/' | relative_url }}">
+        <span class="pb-ring" aria-hidden="true"></span>
+        <span class="pb-core">
+          <svg class="pb-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 18 24 9l20 9-20 9z M12 22v9c0 3 5.4 6 12 6s12-3 12-6v-9 M44 18v12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <h3>Académie</h3>
+          <p>Former gratuitement aux compétences qui ouvrent des portes.</p>
+        </span>
+      </a>
+      <a class="pbubble o" href="{{ '/actions-humanitaires/' | relative_url }}">
+        <span class="pb-ring" aria-hidden="true"></span>
+        <span class="pb-core">
+          <svg class="pb-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36 M10 40v-8h28v8 M14 32v-8h20v8 M19 24v-8h10v8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <h3>Le Socle</h3>
+          <p>Renforcer la base pour élever chacun : collecter, partager et offrir une deuxième vie aux objets qui nous ont été chers.</p>
+        </span>
+      </a>
+      <a class="pbubble b" href="{{ '/solidarite-numerique/' | relative_url }}">
+        <span class="pb-ring" aria-hidden="true"></span>
+        <span class="pb-core">
+          <svg class="pb-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 42V26a16 16 0 0 1 32 0v16 M16 42V27a8 8 0 0 1 16 0v15 M20.5 5h7l-1.6 7h-3.8z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <h3>La Clé de Voûte</h3>
+          <p>La pierre qui manquait : le numérique au service de l'éducation, du commerce et de l'entrepreneuriat en Afrique.</p>
+        </span>
+      </a>
     </div>
   </div>
 </section>
@@ -61,12 +79,11 @@ permalink: /qui-sommes-nous/
     <div class="team-head">
       <div class="sec-head"><span class="eyebrow">L'équipe</span><h2 id="team-title">Celles et ceux qui la portent</h2>
         <p class="sub">Retournez une carte pour découvrir chaque membre.</p></div>
-      <div class="tnav">
-        <button type="button" class="tarrow" data-dir="-1" aria-label="Membre précédent"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button type="button" class="tarrow" data-dir="1" aria-label="Membre suivant"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </div>
     </div>
   </div>
+  <div class="tcarousel">
+    <button type="button" class="tarrow prev" data-dir="-1" aria-label="Membre précédent"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="tarrow next" data-dir="1" aria-label="Membre suivant"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <div class="ttrack" tabindex="0" aria-label="Membres de l'équipe, faites défiler horizontalement">
     {% for m in site.data.equipe %}
     <article class="tcard">
@@ -94,7 +111,11 @@ permalink: /qui-sommes-nous/
     </article>
     {% endfor %}
   </div>
-  <div class="wrap"><p class="note">Une équipe bénévole qui grandit au rythme de ses actions. <a href="{{ '/soutenir/' | relative_url }}#rejoindre">Nous rejoindre</a></p></div>
+  </div>
+  <div class="wrap join-wrap2">
+    <p class="note">Une équipe bénévole qui grandit au rythme de ses actions.</p>
+    <a href="{{ '/soutenir/' | relative_url }}#rejoindre" class="btn-neo">Nous rejoindre<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
 </section>
 
 <section class="govern">
@@ -102,18 +123,7 @@ permalink: /qui-sommes-nous/
     <div class="sec-head"><span class="eyebrow">Transparence</span><h2>Gouvernance &amp; engagements</h2>
       <p class="sub">Association loi 1901 · RNA {{ site.org.rna }} · Siège à Courbevoie</p></div>
 
-
     <div class="gov">
-      <div class="card">
-        <h3>Comment nous sommes financés</h3>
-        <ul class="eth">
-          <li><span class="c">✓</span> Dons de particuliers</li>
-          <li><span class="c">✓</span> Dons en nature : matériel informatique, fournitures</li>
-          <li><span class="c">✓</span> Mécénat d'entreprise</li>
-          <li><span class="c">✓</span> Subventions publiques et soutiens de fondations</li>
-        </ul>
-        <p class="gnote">Les bénéficiaires ne paient rien.</p>
-      </div>
       <div class="card">
         <h3>Nos principes financiers</h3>
         <ul class="eth">
@@ -123,22 +133,16 @@ permalink: /qui-sommes-nous/
           <li><span class="c">✓</span> Comptes communiqués aux partenaires et financeurs sur demande</li>
         </ul>
       </div>
-    </div>
-
-    <div class="card gcard-wide">
-      <h3>Nos engagements éthiques</h3>
-      <ul class="eth two-col">
-        <li><span class="c">✓</span> Transparence financière et traçabilité des dons</li>
-        <li><span class="c">✓</span> Protection renforcée des bénéficiaires mineurs (consentements, droit à l'image)</li>
-        <li><span class="c">✓</span> Conformité au RGPD</li>
-        <li><span class="c">✓</span> Prévention des conflits d'intérêts</li>
-        <li><span class="c">✓</span> Respect des partenaires locaux : en complémentarité, jamais en substitution</li>
-      </ul>
-    </div>
-
-    <div class="gdocs">
-      <p><strong>Statuts, procès-verbal constitutif, récépissé de déclaration :</strong> disponibles sur demande pour nos partenaires et financeurs.</p>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-ghost">Nous les demander</a>
+      <div class="card">
+        <h3>Nos engagements éthiques</h3>
+        <ul class="eth">
+          <li><span class="c">✓</span> Transparence financière et traçabilité des dons</li>
+          <li><span class="c">✓</span> Protection renforcée des bénéficiaires mineurs (consentements, droit à l'image)</li>
+          <li><span class="c">✓</span> Conformité au RGPD</li>
+          <li><span class="c">✓</span> Prévention des conflits d'intérêts</li>
+          <li><span class="c">✓</span> Respect des partenaires locaux : en complémentarité, jamais en substitution</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -160,6 +164,14 @@ permalink: /qui-sommes-nous/
       track.scrollBy({left:step*parseInt(b.getAttribute('data-dir'),10),behavior:'smooth'});
     });
   });
+  var prev=document.querySelector('.tarrow.prev'), next=document.querySelector('.tarrow.next');
+  function edges(){ var max=track.scrollWidth-track.clientWidth-2; prev.disabled=track.scrollLeft<=2; next.disabled=track.scrollLeft>=max; }
+  track.addEventListener('scroll',edges,{passive:true}); window.addEventListener('resize',edges); edges();
+  if('IntersectionObserver' in window){
+    var bs=document.querySelectorAll('.pbubble'); document.documentElement.classList.add('js-reveal');
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.25});
+    bs.forEach(function(b){ io.observe(b); });
+  }
   function setFlip(card,on){
     card.classList.toggle('flipped',on);
     var front=card.querySelector('.tc-front'), back=card.querySelector('.tc-back');

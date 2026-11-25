@@ -6,7 +6,7 @@
 - prenom: "Nacim"
   nom: "Touenti"
   role: "Président & fondateur"
-  photo: "/assets/img/team-nacim.webp"
+  photo: "/assets/img/team-nacim-card.webp"
   competences:
     - "Gestion de projet internationale"
     - "Formation et pédagogie"
@@ -37,7 +37,7 @@
 - prenom: "Valentin"
   nom: "Bouzeau"
   role: "Membre"
-  photo: "/assets/img/team-valentin.webp"
+  photo: "/assets/img/team-valentin-card.webp"
   competences:
     - "Pédagogie"
     - "Enseignement primaire"
